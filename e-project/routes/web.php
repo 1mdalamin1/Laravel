@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,10 @@ Route::get('/category', function () {
 })->name('category');
 
 Route::get('view', [ViewController::class, 'index'])->name('view');
-Route::get('/', [StudentController::class, 'index']);
+// Route::get('/', [StudentController::class, 'index']);
+Route::get('/', [CustomerController::class, 'index']);
+
+
 
 
 
