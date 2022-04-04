@@ -52,4 +52,10 @@ class StudentController extends Controller
         return $data;
 
     }
+
+    public function scope(){
+        $data = null;
+        $data = Student::get();
+        return $data;
+    }
 }

@@ -43,6 +43,7 @@ php artisan make:controller CustomerController
 
 php artisan make:seeder UserSeeder || php artisan db:seed
 php artisan make:factory Student || php artisan db:seed
+php artisan migrate:fresh --seed
 
 
 
