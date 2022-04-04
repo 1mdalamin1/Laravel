@@ -36,7 +36,17 @@ php artisan make:model Category -a => for make model, controlar, polic, resorce,
 
 php artisan migrate:fresh => 
 
-2:30s =>  https://www.youtube.com/watch?v=yci6GrvflVw&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=12
 
 php artisan make:controller CustomerController
+
+2:30s =>  https://www.youtube.com/watch?v=yci6GrvflVw&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=12
+
+php artisan make:seeder UserSeeder || php artisan db:seed
+php artisan make:factory Student || php artisan db:seed
+
+
+
+
+
+
 */
