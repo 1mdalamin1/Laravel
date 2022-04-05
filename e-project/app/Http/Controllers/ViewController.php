@@ -19,5 +19,6 @@ class ViewController extends Controller
             abort(404);
 
         }
+        // return view('welcome');
     }
 }

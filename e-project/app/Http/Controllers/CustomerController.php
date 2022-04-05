@@ -60,9 +60,9 @@ class CustomerController extends Controller
 */
 
         # way to reactive data => Read
-        $data = null;
-        $data = Customer::where('type', 'admin')->get();
-        return $data;
+        // $data = null;
+        // $data = Customer::where('type', 'admin')->get();
+        // return $data;
 
         # way to find | findOrFail data
         // $data = null;
@@ -108,5 +108,7 @@ class CustomerController extends Controller
         $data = Customer::destroy([2,3]);
         return $data;
 */
+return view('welcome');
+
     }
 }

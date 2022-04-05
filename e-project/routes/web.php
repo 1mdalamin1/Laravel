@@ -33,6 +33,7 @@ Route::get('/category', function () {
 })->name('category');
 
 Route::get('view', [ViewController::class, 'index'])->name('view');
+// Route::get('', [ViewController::class, 'index']);
 // Route::get('/', [StudentController::class, 'index']);
 Route::get('/', [CustomerController::class, 'index']);
 Route::get('/scope', [StudentController::class, 'scope']);
