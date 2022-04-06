@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\UserCreatedEvent;
+use App\Http\Controllers\NotificationController;
 use App\Mail\SendSMailToUser;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -43,3 +44,5 @@ Route::get('user-mail', function () {
     event(new UserCreatedEvent($user));
     return 1;
 });
+
+Route::get('notify', [NotificationController::class, 'mail']);

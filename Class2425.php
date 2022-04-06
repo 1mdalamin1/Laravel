@@ -1,6 +1,6 @@
 <?php 
 /**
- * 32:38s => https://www.youtube.com/watch?v=MHw6K3QrUNE&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=15
+ * 28:38s => https://www.youtube.com/watch?v=-2AYqImGBcU&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=16
  * Class 24 | Event | Listener | Mail | Queue
  * 
  * ___________________________________________________________
@@ -21,7 +21,20 @@ php artisan make:listener UserCreatedListener
 
 php artisan queue:table => for migration file
 php artisan migrate => for migration file
-php artisan queue:listen => must be run 
+php artisan queue:listen => must be run  if not run this|| php artisan queue:work 
+
+## class 25 On
+php artisan make:notification SendUserNotification
+php artisan make:controller NotificationController
+
+==== Nexmo SMS Laravel
+
+composer require nexmo/client
+
+
+
+
+
 
 
 
