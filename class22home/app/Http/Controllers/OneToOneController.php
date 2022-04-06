@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
-// use App\Models\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OneToOneController extends Controller
@@ -28,6 +28,13 @@ class OneToOneController extends Controller
         // return view('relationship.one-to-one', compact('users'));
 
         ### The Tnd user to profile  Relationship ###
+
+        // add auser profile data
+        // return User::find(10)->profile()->create([
+        //     'address' => 'Bogora',
+        //     'zip_code' => 159,
+        //     'phone' => 789456
+        // ]);
 
         $profiles = Profile::get();
         return view('relationship.one-to-one', compact('profiles'));

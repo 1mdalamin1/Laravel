@@ -20,17 +20,7 @@
                 <th>Address</th>
                 <th>Zip Code</th>
             </tr>
-           @foreach ($users as $user)
 
-            <tr>
-                <td>{{ $loop->index +1 }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->profile->address ?? 'Null' }}</td>
-                <td>{{  $user->profile->zip_code ?? 'Nill' }}</td>
-            </tr>
-
-            @endforeach
         </table> -->
         <hr>
         <table class="table table-bordered">
@@ -45,7 +35,7 @@
             <tr>
                 <td>{{ $loop->index +1 }}</td>
                 <td>{{ $profile->id }}</td>
-                <td>{{ $profile->user }}</td>
+                <td>{{ $profile->user->name }}</td>
                 <td>{{ $profile->address }}</td>
             </tr>
 
