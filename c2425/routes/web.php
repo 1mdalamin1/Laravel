@@ -1,7 +1,9 @@
 <?php
 
 use App\Events\UserCreatedEvent;
+use App\Mail\SendSMailToUser;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,19 @@ Route::get('new-user', function () {
 
     $user = User::create([
         'name' => 'Tanvir',
-        'email' => 'virza805@gmail.com',
+        'email' => 'tanvirmdalamain1@gmail.com',
+        'password' => 123
+    ]);
+    event(new UserCreatedEvent($user));
+    return 1;
+});
+Route::get('user-mail', function () {
+
+
+
+    $user = User::create([
+        'name' => 'Tanvir Hasan',
+        'email' => 'onamicatanvi@gmail.com',
         'password' => 123
     ]);
     event(new UserCreatedEvent($user));

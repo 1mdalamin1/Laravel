@@ -3,9 +3,11 @@
 namespace App\Listeners;
 
 use App\Events\UserCreatedEvent;
+use App\Mail\SendSMailToUser;
 use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
 
 class UserCreatedListener
 {
@@ -28,10 +30,10 @@ class UserCreatedListener
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(UserCreatedEvent $event)
     {
-        info('I am fired');
-        info($this->user);
-        dd($event);
+
+         // return new SendSMailToUser;
+        Mail::to($event->user->email)->send(new SendSMailToUser($event->user));
     }
 }
