@@ -46,3 +46,4 @@ Route::get('user-mail', function () {
 });
 
 Route::get('notify', [NotificationController::class, 'mail']);
+Route::get('sms', [NotificationController::class, 'phone']);

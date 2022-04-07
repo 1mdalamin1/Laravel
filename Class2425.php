@@ -1,6 +1,6 @@
 <?php 
 /**
- * 28:38s => https://www.youtube.com/watch?v=-2AYqImGBcU&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=16
+ * 31:04s => https://www.youtube.com/watch?v=-2AYqImGBcU&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=16
  * Class 24 | Event | Listener | Mail | Queue
  * 
  * ___________________________________________________________
@@ -27,15 +27,19 @@ php artisan queue:listen => must be run  if not run this|| php artisan queue:wor
 php artisan make:notification SendUserNotification
 php artisan make:controller NotificationController
 
-==== Nexmo SMS Laravel
+==== Nexmo SMS Laravel >>===>> https://www.vonage.com/log-in/?icmp=utilitynav_login_novalue
 
 composer require nexmo/client
 
+composer require vonage/client ||=> Nexmo SMS Send
+
+NEXMO_KEY=08175b35
+NEXMO_SECRET=WQB0hk7ftnmObayI
 
 
 
 
-
+btngradient
 
 
 */
