@@ -6,11 +6,17 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <h3 class="text-center m-4">User Login</h3>
-            <form action="">
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
                 <div class="form-group">
+                    @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
                     <input type="email" name="email" placeholder="Enter your email" class="form-control">
                 </div>
                 <div class="form-group my-4">
+
+
                     <input type="password" name="password" placeholder="password" class="form-control">
                 </div>
                 <div class="form-group d-flex justify-content-evenly">

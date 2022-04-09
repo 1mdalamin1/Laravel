@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -20,15 +21,33 @@ class AuthController extends Controller
     {
         return view('auth.register');
     }
-    public function store(Request $request)
 
+    public function store(Request $request)
     {
         User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => bcsqrt($request->input('password')),
         ]);
-        return $request->all();
+        return redirect()->route('login');
+
+
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'exists:users,email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard');
+        } else {
+            return back()->withErrors(['email' => 'Something is wrong !!']);
+        }
+        // return $credentials;
 
     }
 }
