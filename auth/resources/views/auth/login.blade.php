@@ -22,6 +22,8 @@
                 <div class="form-group d-flex justify-content-evenly">
                     <button class="btn btn-sm btn-success px-4">Login</button>
                     <a href="{{ route('register') }}" class="btn btn-sm btn-warning  px-4" >Go to Register</a>
+
+                    <a href="{{ route('password.request') }}" class="btn btn-sm btn-info px-4" >Forget PassWord</a>
                 </div>
             </form>
         </div>

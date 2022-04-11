@@ -23,10 +23,16 @@ php artisan migrate:fresh --seed
  
  --E--N--D--Class 27 | Custom Authentication | Email Verification --E--N--D--
 
-00:00/29:35s  => https://www.youtube.com/watch?v=ENZjQkLuTRc&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=19
+Done/29:35s  => https://www.youtube.com/watch?v=ENZjQkLuTRc&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=19
  --E--N--D--Class 28 | Resetting Passwords | Custom Authentication --E--N--D--
 
 
+
+
+
+ 00:00/35:11s  => https://www.youtube.com/watch?v=LMJ9OV_nqgY&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=20
+
+ --E--N--D--Class 30 | Class 30 | Custom Multiple Authentication | Email verification  --E--N--D--Class 30 | 
 
 
 
