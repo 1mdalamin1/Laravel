@@ -1,7 +1,7 @@
 <?php 
 /*
 
-08:08s / 45:37s  (33)==> https://www.youtube.com/watch?v=9Ii9p044O7A&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=24
+02:22s / 34:35s  (34)==> https://www.youtube.com/watch?v=phtEYwz4KXA&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=25
 
 --S-t-a-r-t-->  Class 32 | Artisan Console | Task Scheduling <--S-t-a-r-t-- 
 ___________________________________________________________
@@ -30,6 +30,21 @@ php artisan cache:table => php artisan migrate
  => 
 composer require barryvdh/laravel-debugbar --dev => https://github.com/barryvdh/laravel-debugbar
  => 
+
+--S-t-a-r-t-->  Class 34 | Http Client | Session | Custom Helper File <--S-t-a-r-t-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
