@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RedisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('redis-get', [RedisController::class, 'getRedis']);
+Route::get('redis-set', [RedisController::class, 'setRedis']);
+Route::get('redis-delete', [RedisController::class, 'deleteRedis']);
+
+
+
+
+
