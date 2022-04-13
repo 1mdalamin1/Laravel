@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HTTPClientController;
 use App\Http\Controllers\RedisController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,15 @@ Route::get('/', function () {
 Route::get('redis-get', [RedisController::class, 'getRedis']);
 Route::get('redis-set', [RedisController::class, 'setRedis']);
 Route::get('redis-delete', [RedisController::class, 'deleteRedis']);
+
+// Session StartNow:-
+Route::get('session-get', [SessionController::class, 'getSession']);
+Route::get('session-set', [SessionController::class, 'setSession']);
+Route::get('session-delete', [SessionController::class, 'deleteSession']);
+
+
+
+Route::get('http', [HTTPClientController::class, 'index']);
 
 
 

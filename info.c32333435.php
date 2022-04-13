@@ -1,7 +1,7 @@
 <?php 
 /*
 
-02:22s / 34:35s  (34)==> https://www.youtube.com/watch?v=phtEYwz4KXA&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=25
+7:27s / 23:43s  (35)==> https://www.youtube.com/watch?v=10SBS93zyFY&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=26
 
 --S-t-a-r-t-->  Class 32 | Artisan Console | Task Scheduling <--S-t-a-r-t-- 
 ___________________________________________________________
@@ -33,19 +33,24 @@ composer require barryvdh/laravel-debugbar --dev => https://github.com/barryvdh/
 
 --S-t-a-r-t-->  Class 34 | Http Client | Session | Custom Helper File <--S-t-a-r-t-- 
 
+php artisan make:controller SessionController => 
+
+composer dump-autoload
+
+php artisan make:controller HTTPClientController => 
+
+
+--S-t-a-r-t-->  Class 35 | Has One Through | Has Many Through <--S-t-a-r-t-- 
+
+php artisan make:model Mechanic -m => 
+php artisan make:model Owner -m => 
+php artisan make:model Car -m => 
+
+php artisan migrate 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+2:02s বেহেস্তের আশ্রাফ আলী থানভীর না => https://www.youtube.com/watch?v=tl2pQ90fpqQ
+php artisan migrate:fresh 
 */
