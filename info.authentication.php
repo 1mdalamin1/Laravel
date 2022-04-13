@@ -12,6 +12,7 @@ composer create-project laravel/laravel:^8.0 auth
 cd auth
 php artisan serve
 php artisan make:controller AuthController
+
 php artisan migrate
 
 --E--N--D-- Class 26 | Authentication --E--N--D--
@@ -34,7 +35,17 @@ Done/29:35s  => https://www.youtube.com/watch?v=ENZjQkLuTRc&list=PLnhrpn1DBwx6Ma
 
  --E--N--D--Class 30 | Class 30 | Custom Multiple Authentication | Email verification  --E--N--D--Class 30 | 
 
-
+  => config/auth.php guards definds korta hoba .
+  => 
+ php artisan make:model Admin => 
+  => 
+  => করা হয় নি ...
+  => 
+  => Class 30 | Multiple BreezeAuthentication 
+  => 
+  => 
+  => 
+  => 
 
 
 
