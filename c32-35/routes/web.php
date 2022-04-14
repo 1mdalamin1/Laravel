@@ -3,6 +3,8 @@
 use App\Http\Controllers\HTTPClientController;
 use App\Http\Controllers\RedisController;
 use App\Http\Controllers\SessionController;
+use App\Models\District;
+use App\Models\Mechanic;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +34,15 @@ Route::get('session-delete', [SessionController::class, 'deleteSession']);
 
 
 Route::get('http', [HTTPClientController::class, 'index']);
+
+Route::get('has-one-through', function(){
+    return Mechanic::with('car_owner')->find(1);
+});
+
+Route::get('has-many-through', function(){
+    return District::with('villages')->find(1);
+    // return District::withCount('villages')->find(1);
+});
 
 
 

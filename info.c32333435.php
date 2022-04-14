@@ -1,7 +1,7 @@
 <?php 
 /*
 
-7:27s / 23:43s  (35)==> https://www.youtube.com/watch?v=10SBS93zyFY&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=26
+18:45s / 23:43s  (35)==> https://www.youtube.com/watch?v=10SBS93zyFY&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=26
 
 --S-t-a-r-t-->  Class 32 | Artisan Console | Task Scheduling <--S-t-a-r-t-- 
 ___________________________________________________________
@@ -49,7 +49,17 @@ php artisan make:model Car -m =>
 php artisan migrate 
 
 
+## Has Many Through ## 
 
+php artisan make:model District -m => 
+php artisan make:model Thana -m => 
+php artisan make:model Village -m => 
+
+php artisan migrate:fresh --seed 
+
+
+
+https://phoenixnap.com/blog/software-development-life-cycle
 
 2:02s বেহেস্তের আশ্রাফ আলী থানভীর না => https://www.youtube.com/watch?v=tl2pQ90fpqQ
 php artisan migrate:fresh 
