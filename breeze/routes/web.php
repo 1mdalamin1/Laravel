@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.auth.dashboard');
+})->middleware(['auth:admin'])->name('admin.dashboard');
+
+Route::resource('post', PostController::class)->middleware(['can:isAdmin', 'can:isEditor']);
 
 require __DIR__.'/auth.php';

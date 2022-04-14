@@ -1,12 +1,12 @@
 <?php  
 /*
     |--------------------------------------------------------------------------
-    | >===(( Class 30 | Multiple Authentication Using Breeze ))===<
+    | >===(( Class 31 | Authorization | Gates | Policies ))===<
     |--------------------------------------------------------------------------
     |
     */
 /*
-25:08/45:42s  => https://www.youtube.com/watch?v=5JY4SHcq_5Q&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=21
+26:35s/40:34s  => https://www.youtube.com/watch?v=CPGpa14UIgw&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=22
   => 
  
   => https://github.com/laravel/breeze
@@ -25,15 +25,32 @@ composer require laravel/breeze --dev  => for install breeze Authentication paka
   => Multiple Authentication | 1st create a guard config/auth.php file
  php artisan make:model Admin -m => 
  php artisan migrate => 
+ php artisan make:request AdminLoginRequest => 
+ php artisan migrate:fresh --seed => 
   => 
+ ###  => Class 31 | Authorization | Gates | Policies
   => 
-  => 
-  => 
-
-php artisan serve
-php artisan make:controller AuthController
 */
+/*
+    |--------------------------------------------------------------------------
+    | >===(( Class 31 | Authorization | Gates | Policies ))===<
+    |--------------------------------------------------------------------------
+    |
 
+  => go to AuthServiceProvider.php
+ php artisan make:model Post -m => 
+ php artisan migrate => 
+ php artisan make:controller PostController -r =>
+  => 
+  => 
+
+
+
+
+
+
+
+    */
 
 
 

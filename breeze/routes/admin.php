@@ -33,7 +33,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
 
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth:admin')->group(function () {
         Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])->name('verification.notice');
 
         Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
