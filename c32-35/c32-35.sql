@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2022 at 11:56 AM
+-- Generation Time: Apr 14, 2022 at 07:57 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -62,6 +62,29 @@ CREATE TABLE `cars` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'HVZrJ', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(2, 'xQBND', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(3, 'uRK2M', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(4, 'efvTh', '2022-04-13 23:08:42', '2022-04-13 23:08:42');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -109,10 +132,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_04_12_090920_create_cache_table', 2),
-(6, '2022_04_13_072845_create_mechanics_table', 3),
-(7, '2022_04_13_072912_create_owners_table', 3),
-(8, '2022_04_13_092442_create_cars_table', 3);
+(5, '2022_04_12_090920_create_cache_table', 1),
+(6, '2022_04_13_072845_create_mechanics_table', 1),
+(7, '2022_04_13_072912_create_owners_table', 1),
+(8, '2022_04_13_092442_create_cars_table', 1),
+(9, '2022_04_14_043645_create_districts_table', 1),
+(10, '2022_04_14_043704_create_thanas_table', 1),
+(11, '2022_04_14_043714_create_villages_table', 1);
 
 -- --------------------------------------------------------
 
@@ -161,6 +187,37 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thanas`
+--
+
+CREATE TABLE `thanas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `thanas`
+--
+
+INSERT INTO `thanas` (`id`, `name`, `district_id`, `created_at`, `updated_at`) VALUES
+(1, 'sEP9S', 1, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(2, 'RvbPN', 1, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(3, 'vnDcb', 3, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(4, 'UOvfq', 2, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(5, '2IfRs', 2, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(6, 'Oci1q', 4, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(7, 'PJ3Ae', 3, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(8, 'OXUya', 4, '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(9, 'aRvGD', 2, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(10, 'bAz65', 2, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(11, 'ABIII', 2, '2022-04-13 23:08:43', '2022-04-13 23:08:43');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -180,11 +237,57 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Aurelio Berge', 'wolff.madeline@example.org', '2022-04-12 01:43:32', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ZB3sF703FN', '2022-04-12 01:43:32', '2022-04-12 01:43:32'),
-(6, 'Leif Walker IV', 'kraig00@example.org', '2022-04-12 01:43:32', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'j6BZDesCz5', '2022-04-12 01:43:32', '2022-04-12 01:43:32'),
-(8, 'Bernardo Dietrich', 'reilly.kale@example.com', '2022-04-12 01:43:32', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'tPsK2mzuAz', '2022-04-12 01:43:33', '2022-04-12 01:43:33'),
-(9, 'Joyce O\'Reilly', 'lesly30@example.com', '2022-04-12 01:43:32', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'xWspaqbyoi', '2022-04-12 01:43:33', '2022-04-12 01:43:33'),
-(10, 'Gus Brakus', 'lchamplin@example.com', '2022-04-12 01:43:32', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'l0dPbdtwbj', '2022-04-12 01:43:33', '2022-04-12 01:43:33');
+(1, 'Darron Rath', 'jace.botsford@example.org', '2022-04-13 23:08:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'dOqrbt1Ws9', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(2, 'Harley Nienow Sr.', 'gstracke@example.org', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'nvikp8vFnu', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(3, 'Miss Dawn Witting DDS', 'jreichert@example.org', '2022-04-13 23:08:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'PpFbTTfVVZ', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(4, 'Aylin Nicolas Sr.', 'kallie12@example.com', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'SRIyKYDfxh', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(5, 'Jose Prohaska', 'aisha73@example.net', '2022-04-13 23:08:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'N6La1VFhYM', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(6, 'Audie Willms', 'emmalee20@example.com', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'VXXJ1gXWYG', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(7, 'Verner Little', 'quitzon.althea@example.com', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'VwthoYplIY', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(8, 'Ursula Morissette', 'qgraham@example.com', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'b2w7MVAzpl', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(9, 'Miss Jaunita Romaguera', 'huels.keaton@example.org', '2022-04-13 23:08:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'c2TJbHRSPQ', '2022-04-13 23:08:42', '2022-04-13 23:08:42'),
+(10, 'Estevan Legros', 'jermain52@example.net', '2022-04-13 23:08:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'B4L0YLBSpU', '2022-04-13 23:08:42', '2022-04-13 23:08:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `villages`
+--
+
+CREATE TABLE `villages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thana_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `villages`
+--
+
+INSERT INTO `villages` (`id`, `name`, `thana_id`, `created_at`, `updated_at`) VALUES
+(1, 'Ot3sS', 2, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(2, 'lBCHR', 10, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(3, 'dcgJf', 3, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(4, '3dxOA', 9, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(5, 'gnXI3', 7, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(6, '5UDPE', 1, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(7, 'cj3X0', 5, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(8, 'RaMm0', 7, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(9, 'u1Eca', 5, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(10, 'Yr7Gp', 7, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(11, 'I62Bk', 10, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(12, 'tlFxH', 7, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(13, 'sRGFC', 3, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(14, '21esQ', 2, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(15, 'dmgR9', 9, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(16, 'wwQAX', 9, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(17, 'k2VIz', 8, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(18, '7UYye', 4, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(19, '3lj31', 9, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(20, 'nNvZQ', 1, '2022-04-13 23:08:43', '2022-04-13 23:08:43'),
+(21, 'HUgb3', 4, '2022-04-13 23:08:43', '2022-04-13 23:08:43');
 
 --
 -- Indexes for dumped tables
@@ -206,6 +309,12 @@ ALTER TABLE `cache_locks`
 -- Indexes for table `cars`
 --
 ALTER TABLE `cars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -248,11 +357,23 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `thanas`
+--
+ALTER TABLE `thanas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `villages`
+--
+ALTER TABLE `villages`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -263,6 +384,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `cars`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -280,7 +407,7 @@ ALTER TABLE `mechanics`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `owners`
@@ -295,10 +422,22 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `thanas`
+--
+ALTER TABLE `thanas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `villages`
+--
+ALTER TABLE `villages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
