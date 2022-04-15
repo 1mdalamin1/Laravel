@@ -1,6 +1,8 @@
 <?php 
 /*
-1:00s/1:03:34s => https://www.youtube.com/watch?v=eFpDO487Rqg&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=28
+https://www.facebook.com/aristrocratbuffetlounge/
+
+56:05s/1:03:34s => https://www.youtube.com/watch?v=eFpDO487Rqg&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=28
 
 php artisan = pa
 
@@ -21,11 +23,10 @@ php artisan make:request AdminAuthRequest
 
 ##########  Class 37 | Project | Category CRUD with Axios #########
 
-php artisan make:model Category -m
+php artisan make:model Category -m || => https://drawsql.app/vir-za/diagrams/project
+php artisan make:controller Admin/CategoryController -r
 
- 
-npm install
-npm run dev
+
 php artisan migrate
 
 
