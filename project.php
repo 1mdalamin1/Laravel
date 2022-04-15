@@ -1,6 +1,6 @@
 <?php 
 /*
-20:55s/1:01:09s => https://www.youtube.com/watch?v=c6ujS1awEaQ&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=27
+1:00s/1:03:34s => https://www.youtube.com/watch?v=eFpDO487Rqg&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=28
 
 php artisan = pa
 
@@ -11,6 +11,31 @@ composer create-project laravel/laravel:^8.0 project
 cd project
  
 php artisan serve
+php artisan make:model Admin -m
+
+php artisan migrate
+php artisan migrate:fresh --seed
+composer require laravel/breeze --dev => https://laravel.com/docs/8.x/starter-kits
+php artisan breeze:install
+php artisan make:request AdminAuthRequest
+
+##########  Class 37 | Project | Category CRUD with Axios #########
+
+php artisan make:model Category -m
+
+ 
+npm install
+npm run dev
+php artisan migrate
+
+
+
+
+
+
+
+
+
 
 
 */
