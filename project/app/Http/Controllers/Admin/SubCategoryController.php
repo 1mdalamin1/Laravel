@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.category.index');
-    }
-
-    public function all()
-    {
-        return Category::latest()->get();
+        //
     }
 
     /**
@@ -50,9 +46,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        return $category;
+        //
     }
 
     /**
@@ -84,11 +80,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($category)
     {
-        $category = $category->delete();
+        // $category = Category::find($category);
+        $category = Category::whereId($category)->first();
 
-        if($category) {
+        if($category->delete()) {
             return response()->json([
                 'mgs' => "Data delete kora hycha!"
             ]);

@@ -140,9 +140,9 @@
                     <td>${item.name}</td>
                     <td><img src="${item.image}" alt="" ></td>
                     <td class="text-center">
-                        <a data-toggle="modal" data-target="#viewModal" id="viewRow" class="btn btn-sm btn-success" data-id="${item.slug}"><i class="fa fa-eye"></i></a>
-                        <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-info" data-id="${item.slug}"><i class="fa fa-edit"></i></a>
-                        <a data-toggle="modal" data-target="#viewModal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                        <a data-toggle="modal" data-target="#viewModal" id="viewRow" class="btn btn-sm btn-success" data-id="${item.id}"><i class="fa fa-eye"></i></a>
+                        <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-info" data-id="${item.id}"><i class="fa fa-edit"></i></a>
+                        <a data-toggle="modal" data-target="#deleteRow" class="btn btn-sm btn-danger" data-id="${item.id}"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
                 `
@@ -197,11 +197,11 @@
                 reverseButtons: true
             }).then((result) => {
                 if(result.isConfirmed) {
-                    let slug = $(this).attr('data-id');
-                    const url = `${admin_base_url}/category/${slug}`;
+                    let id = $(this).attr('data-id');
+                    const url = `${admin_base_url}/sub-cat/${id}`;
                     axios.delete(url)
                     .then(res => {
-                        getAllCategory();
+                        getAllSubCategory();
                     })
                     swalWithBootstrapButtons.fire(
                         'Deleted!',

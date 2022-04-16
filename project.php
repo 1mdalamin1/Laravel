@@ -20,7 +20,7 @@ i wont to use laravel only backend api & frontend vue.js|react.js
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-1:08s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
+10:58s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
 
 php artisan = pa
 
@@ -52,7 +52,8 @@ php artisan make:request AdminAuthRequest
 
 php artisan make:model Category -m || => https://drawsql.app/vir-za/diagrams/project
 php artisan make:controller Admin/CategoryController -r
-
+php artisan make:controller Admin/SubCategoryController -r
+php artisan make:model SubCategory -m
 
 php artisan migrate
 
