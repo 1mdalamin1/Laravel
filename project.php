@@ -1,5 +1,23 @@
 <?php 
 /*
+https://www.artofcse.com/learning/project-analysis-and-database-design
+
+13:47s/51:24s => https://www.youtube.com/watch?v=VqrDeV-Hu1Y&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=15
+
+Database design  | => https://drawsql.app/home
+
+|--------------------------------------------------------------------------
+|You Can user project_login_logout.zip with Breeze ---> https://github.com/1mdalamin1/Laravel/tree/project
+|--------------------------------------------------------------------------
+|
+|||||| This may be last project only laravel :) https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+
+i wont to use laravel only backend api & frontend vue.js|react.js 
+
+*/
+
+/*
+
 https://www.facebook.com/aristrocratbuffetlounge/
 
 1:08s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
