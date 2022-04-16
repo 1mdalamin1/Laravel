@@ -19,6 +19,6 @@ Route::prefix('admin')->name('admin')->group(function() {
     Route::prefix('category')->name('category.')->group(function() {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('/all', [CategoryController::class, 'all'])->name('all');
-        Route::get('/{slug}', [CategoryController::class, 'view'])->name('view');
+        Route::get('/{category}', [CategoryController::class, 'show'])->name('show');
     });
 });

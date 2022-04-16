@@ -2,7 +2,7 @@
 /*
 https://www.facebook.com/aristrocratbuffetlounge/
 
-56:05s/1:03:34s => https://www.youtube.com/watch?v=eFpDO487Rqg&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=28
+1:08s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
 
 php artisan = pa
 
@@ -19,6 +19,15 @@ php artisan migrate
 php artisan migrate:fresh --seed
 composer require laravel/breeze --dev => https://laravel.com/docs/8.x/starter-kits
 php artisan breeze:install
+
+[{(
+    php artisan breeze:install
+    
+    npm install
+    npm run dev
+    php artisan migrate
+)}]
+
 php artisan make:request AdminAuthRequest
 
 ##########  Class 37 | Project | Category CRUD with Axios #########
