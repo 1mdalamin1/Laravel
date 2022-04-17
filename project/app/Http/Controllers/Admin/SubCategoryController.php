@@ -16,9 +16,14 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::latest()->get();
+        return view('backend.sub_category.index', compact('categories'));
     }
 
+    public function getAllSubCat()
+    {
+        return SubCategory::with('category')->latest()->get();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +42,17 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = SubCategory::create([
+            'name' => $request->name,
+            'slug' => $request->name,
+            'category_id' => $request->category_id,
+        ]);
+        if ($category) {
+            return response()->json([
+                'mgs' => "Custom Notification!"
+            ]);
+        }
+        return $category;
     }
 
     /**
@@ -46,9 +61,9 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function view(SubCategory $id)
     {
-        //
+        return $id->load('category');
     }
 
     /**
@@ -69,9 +84,9 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SubCategory $id)
     {
-        //
+        $id->update($request->all());
     }
 
     /**
@@ -82,12 +97,11 @@ class SubCategoryController extends Controller
      */
     public function destroy($category)
     {
-        // $category = Category::find($category);
-        $category = Category::whereId($category)->first();
+        $category = SubCategory::whereId($category)->first();
 
-        if($category->delete()) {
+        if ($category->delete()) {
             return response()->json([
-                'mgs' => "Data delete kora hycha!"
+                'mgs' => "Data delete kora hyche!"
             ]);
         }
     }

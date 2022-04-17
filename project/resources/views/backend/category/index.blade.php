@@ -19,22 +19,13 @@
                             <th class="text-center">Actions</th>
                         </tr>
                         <tbody id="catTbody"></tbody>
-                        {{-- <tr>
-                            <td>1</td>
-                            <td>Demo</td>
-                            <td><img src="" alt="" ></td>
-                            <td class="text-center">
-                                <a data-toggle="modal" data-target="#viewModal" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                                <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                <a data-toggle="modal" data-target="#viewModal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr> --}}
+
                     </table>
                 </div>
             </div>
         </div>
     </div>
-   {{-- the end catagory data show --}}
+   <!-- {{-- the end category data show --}} -->
    <div class="col-md-4 mt-3">
        <div class="card">
            <div class="card-header">
@@ -60,10 +51,6 @@
 </div>
 
 <!-- Button trigger modal -->
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button> --}}
-
   <!--View Modal -->
   <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -89,37 +76,42 @@
     </div>
   </div>
 
-  <!--Edit Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="editForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="edit_name">
+                            <input type="hidden" class="form-control" id="edit_id">
+                            <span class="text-danger" id="catNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="edit_slug">
+                            <input type="hidden" class="form-control" id="edit_slug">
+                            <span class="text-danger" id="catNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-success btn-block"><i class="fa fa-plus"></i>Update Category</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <table>
-              <tbody class="table table-bordered">
-                  <tr>
-                      <th>Name</th>
-                      <th>Demo</th>
-                  </tr>
-                  <tr>
-                      <th>Image</th>
-                      <th><img src="" alt=""></th>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save Changes</button>
-        </div>
-      </div>
     </div>
-  </div>
 @stop
 
 @push('js')
@@ -138,11 +130,13 @@
                 <tr>
                     <td>${item.id}</td>
                     <td>${item.name}</td>
-                    <td><img src="${item.image}" alt="" ></td>
+                    <td><img src="${item.image}" alt=""></td>
                     <td class="text-center">
-                        <a data-toggle="modal" data-target="#viewModal" id="viewRow" class="btn btn-sm btn-success" data-id="${item.slug}"><i class="fa fa-eye"></i></a>
-                        <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-info" data-id="${item.slug}"><i class="fa fa-edit"></i></a>
-                        <a data-toggle="modal" data-target="#viewModal" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="" class="btn btn-sm btn-success" data-id="${item.slug}" data-toggle="modal" data-target="#viewModal" id="viewRow"><i class="fa fa-eye"></i></a>
+
+                        <a href="" class="btn btn-sm btn-info" data-id="${item.slug}" data-toggle="modal" data-target="#editModal" id="editRow"><i class="fa fa-edit"></i></a>
+
+                        <a href="" id="deleteRow" class="btn btn-sm btn-danger" data-id="${item.slug}"><i class="fa fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 `
@@ -219,6 +213,44 @@
                 }
             })
         })
+
+
+        // edit
+        $('body').on('click', '#editRow', function(e) {
+            e.preventDefault()
+            let slug = $(this).attr('data-id');
+            const url = `${admin_base_url}/category/${slug}`;
+            axios.get(url)
+                .then(res => {
+                    let {
+                        data
+                    } = res
+                    $('#edit_name').val(data.name)
+                    $('#edit_slug').val(data.slug)
+                    // console.log(data);
+                })
+        });
+
+        // Update
+
+        $('body').on('submit', '#editDataForm', function(e) {
+            e.preventDefault()
+            let name = $('#edit_name').val()
+            let slug = $('#edit_slug').val()
+            let url = `${admin_base_url}/category/update/${slug}`
+
+            axios.post(url, {
+                name,
+                slug
+            }).then(res => {
+                getAllCategoty();
+                setSuccessAlert('Data Update Successfully!')
+                $('#editModal').modal('toggle')
+            }).catch(err => {
+
+            })
+        })
+
     </script>
 @endpush
 

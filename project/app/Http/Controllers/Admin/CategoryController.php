@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Exception;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -22,7 +26,6 @@ class CategoryController extends Controller
     {
         return Category::latest()->get();
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -39,9 +42,18 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $category = Category::create([
+            'name' => $request->name,
+            'slug' => $request->name,
+        ]);
+        if ($category) {
+            return response()->json([
+                'mgs' => "Custom Notification!"
+            ]);
+        }
+        return $category;
     }
 
     /**
@@ -73,9 +85,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-        //
+        $category->update($request->validated());
     }
 
     /**
@@ -88,9 +100,9 @@ class CategoryController extends Controller
     {
         $category = $category->delete();
 
-        if($category) {
+        if ($category) {
             return response()->json([
-                'mgs' => "Data delete kora hycha!"
+                'mgs' => "Data delete kora hyche!"
             ]);
         }
     }

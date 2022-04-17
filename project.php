@@ -55,11 +55,14 @@ php artisan make:controller Admin/CategoryController -r
 php artisan make:controller Admin/SubCategoryController -r
 php artisan make:model SubCategory -m
 
+
 php artisan migrate
 
+php artisan make:request CategoryRequest
+php artisan make:request CategoryUpdateRequest
 
 
-
+Sorce Code = https://github.com/AR-Shahin/Web-Development-With-Laravel_batch_2
 
 
 

@@ -18,13 +18,13 @@ Route::prefix('admin')->name('admin')->group(function() {
     // })->middleware(['auth:admin'])->name('dashboard');
 
     # Category
-    Route::prefix('category')->name('category.')->group(function() {
+    Route::prefix('category')->name('category.')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('/all', [CategoryController::class, 'all'])->name('all');
         Route::get('/{category}', [CategoryController::class, 'show'])->name('show');
-        Route::post('category', [CategoryController::class, 'store'])->name('store'); // add by me
-        Route::delete('{category}', [CategoryController::class, 'destroy'])->name('destroy'); // add by me
-        Route::post('/update/category', [CategoryController::class, 'update'])->name('update'); // add by me
+        Route::post('category', [CategoryController::class, 'store'])->name('store');
+        Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('destroy');
+        Route::post('/update/{category}', [CategoryController::class, 'update'])->name('update');
     });
 
     # Sub Category
@@ -34,6 +34,6 @@ Route::prefix('admin')->name('admin')->group(function() {
         Route::get('/all', 'getAllSubCat')->name('all'); // add by me
         Route::get('/{id}', 'view')->name('view'); // add by me
         Route::delete('{category}', 'destroy')->name('destroy'); // add by me
-        // Route::post('/update/category', [CategoryController::class, 'update'])->name('update'); // add by me
+        Route::post('/update/{id}','update')->name('update'); // add by me
     });
 });
