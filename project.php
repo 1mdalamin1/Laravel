@@ -17,10 +17,11 @@ i wont to use laravel only backend api & frontend vue.js|react.js
 */
 
 /*
+php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-10:58s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
+42:33s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
 
 php artisan = pa
 
@@ -61,6 +62,35 @@ php artisan migrate
 php artisan make:request CategoryRequest
 php artisan make:request CategoryUpdateRequest
 
+======================need CRUD Color & Size later now use create seeder=================== 
+
+Real Project must be use fileable not guarded | cause fileable succerut more then guarded
+
+php artisan make:model Color -ms
+php artisan make:model Size -ms
+php artisan make:controller Admin/SizeController 
+php artisan make:controller Admin/ColorController 
+
+php artisan migrate:fresh --seed
+
+php artisan make:model Product -mf
+php artisan make:controller Admin/ProductController 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Sorce Code = https://github.com/AR-Shahin/Web-Development-With-Laravel_batch_2
 
@@ -69,7 +99,12 @@ Sorce Code = https://github.com/AR-Shahin/Web-Development-With-Laravel_batch_2
 
 
 
-
+testimonial-custom {
+    transform: skew(-20deg,0deg);
+}
+.testimonial-custom {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
 */
 
 

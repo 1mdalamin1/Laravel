@@ -15,10 +15,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Admin::create([
+        Admin::create(
+            [
             'name' => 'admin',
             'email' => 'admin@mail.com',
             'password' => bcrypt('admin'),
+            ],
+            [
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('Admin'),
+            ]
+        );
+
+        $this->call([
+            ColorSeeder::class, SizeSeeder::class
         ]);
     }
 }

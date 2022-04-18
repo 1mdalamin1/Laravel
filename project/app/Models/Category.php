@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -13,15 +13,23 @@ class Category extends Model
 
     protected $guarded = [];
 
-    function getRouteKeyName()
+    public function getRouteKeyName()
     {
         return 'slug';
     }
-    // public function slug(): Attribute
-    // {
-    //     return new Attribute(
-    //         get: fn ($value) => ($value),
-    //         set: fn ($value) => Str::slug($value),
-    //     );
-    // }
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug($value);
+    }
+
+    public function sub_categories(): HasMany
+    {
+        return $this->hasMany(SubCategory::class, 'category_id', 'id');
+    }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
 }

@@ -94,10 +94,17 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
               <li class="nav-item">
                 <a href="/admin/sub-cat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>SubCategory</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/product" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Products</p>
                 </a>
               </li>
 

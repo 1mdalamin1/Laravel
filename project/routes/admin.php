@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin')->group(function() {
@@ -38,4 +39,23 @@ Route::prefix('admin')->name('admin')->group(function() {
         Route::delete('{category}', 'destroy')->name('destroy'); // add by me
         Route::post('/update/{id}','update')->name('update'); // add by me
     });
+
+
+    # Product
+
+    Route::prefix('product')->name('product.')->controller(ProductController::class)->group(function () {
+        Route::post('/store', 'store')->name('store');
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::get('/view/{slug}', 'view')->name('view');
+        Route::get('/delete/{slug}', 'delete')->name('delete');
+        Route::get('/edit/{product}', 'edit')->name('edit');
+        Route::get('/categories/{id}', 'categories')->name('categories');
+
+        Route::post('active/{product}', 'active')->name('active');
+        Route::post('inActive/{product}', 'inActive')->name('inActive');
+
+        Route::post('update/{product}', 'update')->name('update');
+    });
+
 });

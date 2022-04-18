@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2022 at 03:08 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Apr 18, 2022 at 12:19 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +33,7 @@ CREATE TABLE `admins` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `last_login` datetime NOT NULL DEFAULT '2022-04-15 05:26:04',
+  `last_login` datetime NOT NULL DEFAULT '2022-04-18 10:17:41',
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -45,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `last_login`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@mail.com', NULL, '$2y$10$.148stu3OWuhsws9GDhisOPT3JMe1sxD2/BcwZyB1EPIDNNhxUbqG', '2022-04-15 05:26:04', NULL, '2022-04-14 23:26:05', '2022-04-14 23:26:05');
+(1, 'admin', 'admin@mail.com', NULL, '$2y$10$0dyrMj1Crxh8o.gvF4Fgl.92WEmLiGEwcIZs21EZ8XCKOfLt5kkm6', '2022-04-18 10:17:41', NULL, '2022-04-18 04:17:45', '2022-04-18 04:17:45');
 
 -- --------------------------------------------------------
 
@@ -62,17 +61,30 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `categories`
+-- Table structure for table `colors`
 --
 
-INSERT INTO `categories` (`id`, `name`, `slug`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Boy', 'boy', NULL, NULL, NULL),
-(2, 'Girl', 'girl', NULL, NULL, NULL),
-(3, 'Tanvir', 'tanvir', NULL, NULL, NULL),
-(4, 'Nitu', 'nitu', NULL, NULL, NULL),
-(6, 'test-2', 'test-2', NULL, NULL, NULL),
-(7, 'Suti Akter', 'Suti Akter', NULL, '2022-04-17 19:05:02', '2022-04-17 19:05:02');
+CREATE TABLE `colors` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `colors`
+--
+
+INSERT INTO `colors` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'Red', 'red', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(2, 'Green', 'green', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(3, 'Blue', 'blue', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(4, 'White', 'white', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(5, 'Black', 'black', '2022-04-18 04:17:46', '2022-04-18 04:17:46');
 
 -- --------------------------------------------------------
 
@@ -87,7 +99,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -112,8 +124,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_04_15_050638_create_admins_table', 1),
-(6, '2022_04_15_064823_create_categories_table', 2),
-(7, '2022_04_16_075006_create_sub_categories_table', 3);
+(6, '2022_04_15_064823_create_categories_table', 1),
+(7, '2022_04_16_075006_create_sub_categories_table', 1),
+(8, '2022_04_18_061459_create_colors_table', 1),
+(9, '2022_04_18_061533_create_sizes_table', 1),
+(10, '2022_04_18_072259_create_products_table', 1);
 
 -- --------------------------------------------------------
 
@@ -139,11 +154,59 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8_unicode_ci,
+  `abilities` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `sub_cat_id` bigint(20) UNSIGNED NOT NULL,
+  `color_id` bigint(20) UNSIGNED NOT NULL,
+  `size_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `price` double(8,2) NOT NULL,
+  `sell_price` double(8,2) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sizes`
+--
+
+CREATE TABLE `sizes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sizes`
+--
+
+INSERT INTO `sizes` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'XXL', 'xxl', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(2, 'XL', 'xl', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(3, 'S', 's', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(4, 'L', 'l', '2022-04-18 04:17:46', '2022-04-18 04:17:46'),
+(5, 'M', 'm', '2022-04-18 04:17:46', '2022-04-18 04:17:46');
 
 -- --------------------------------------------------------
 
@@ -159,20 +222,6 @@ CREATE TABLE `sub_categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `sub_categories`
---
-
-INSERT INTO `sub_categories` (`id`, `name`, `slug`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Mahi', 'mahi', 2, NULL, '2022-04-17 03:28:38'),
-(3, 'Onamica', 'onameica', 4, NULL, NULL),
-(4, 'Afroza', 'afroza', 2, NULL, '2022-04-17 04:18:24'),
-(5, 'Tanvir', 'tanvir', 1, '2022-04-17 02:45:11', '2022-04-17 02:45:11'),
-(6, 'Faria', 'faria', 2, '2022-04-17 02:47:21', '2022-04-17 02:47:21'),
-(7, 'Tonny', 'tonny', 2, '2022-04-17 03:07:55', '2022-04-17 03:07:55'),
-(8, 'Afrin', 'afrin', 2, '2022-04-17 03:19:43', '2022-04-17 03:19:43'),
-(9, 'Afnanf', 'afnanf', 1, '2022-04-17 18:26:25', '2022-04-17 18:26:39');
 
 -- --------------------------------------------------------
 
@@ -192,13 +241,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Tanvir', 'user@gmail.com', NULL, '$2y$10$hzbSu/z9Svo9UrsYelHU6e53fMhnEBFkWVuyIOTZuGlFVIN/xBId.', NULL, '2022-04-15 23:22:38', '2022-04-15 23:22:38');
-
---
 -- Indexes for dumped tables
 --
 
@@ -213,6 +255,12 @@ ALTER TABLE `admins`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `colors`
+--
+ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -243,6 +291,22 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `products_category_id_foreign` (`category_id`),
+  ADD KEY `products_sub_cat_id_foreign` (`sub_cat_id`),
+  ADD KEY `products_color_id_foreign` (`color_id`),
+  ADD KEY `products_size_id_foreign` (`size_id`);
+
+--
+-- Indexes for table `sizes`
+--
+ALTER TABLE `sizes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
@@ -269,7 +333,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `colors`
+--
+ALTER TABLE `colors`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -281,7 +351,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -290,16 +360,41 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sizes`
+--
+ALTER TABLE `sizes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `products_color_id_foreign` FOREIGN KEY (`color_id`) REFERENCES `colors` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `products_size_id_foreign` FOREIGN KEY (`size_id`) REFERENCES `sizes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `products_sub_cat_id_foreign` FOREIGN KEY (`sub_cat_id`) REFERENCES `sub_categories` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -15,6 +15,7 @@ class SubCategory extends Model
 
     protected $guarded = [];
 
+
     public function slug(): Attribute
     {
         return new Attribute(
