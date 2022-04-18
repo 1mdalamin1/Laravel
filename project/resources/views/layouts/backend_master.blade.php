@@ -7,7 +7,7 @@
 
   <!-- Navbar -->
   @includeIf('backend.inc.navbar')
-  <!-- /.navbar -->
+  <!-- navbar -->
 
   <!-- Main Sidebar Container -->
   @includeIf('backend.inc.sidebar')
@@ -18,18 +18,18 @@
 @yield('breadcumb')
     {{-- @includeIf('backend.inc.breadcumb') --}}
 
-    <!-- /.content-header -->
+    <!-- content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         @yield('master_content')
-      </div><!-- /.container-fluid -->
+      </div><!-- container-fluid -->
     </section>
-    <!-- /.content -->
+    <!-- end content -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
@@ -40,6 +40,6 @@
 
   <!-- Control Sidebar -->
   @includeIf('backend.inc.right')
-  <!-- /.control-sidebar -->
+  <!-- control-sidebar -->
 </div>
-<!-- ./wrapper -->
+<!-- wrapper -->

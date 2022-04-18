@@ -40,8 +40,7 @@
 
         @yield('app_content')
 
-        <!-- ./wrapper -->
-
+        <!-- wrapper -->
         <!-- jQuery -->
         <script src="{{ asset('backend') }}/plugins/jquery/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
