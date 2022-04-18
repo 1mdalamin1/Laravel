@@ -85,10 +85,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, Category $category)
+    // public function update(CategoryUpdateRequest $request, Category $category)
+    // {
+    //     $category->update($request->validated()->all());
+    // }
+    public function update(Request $request, Category $category)
     {
-        $category->update($request->validated()->all());
+        $category->update($request->all());
     }
+
 
     /**
      * Remove the specified resource from storage.

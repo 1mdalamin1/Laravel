@@ -18,16 +18,7 @@
                                 <th class="text-center">Actions</th>
                             </tr>
                             <tbody id="subTbody"></tbody>
-                            {{-- <tr>
-                            <td>1</td>
-                            <td>Demo</td>
-                            <td><img src="" alt=""></td>
-                            <td class="text-center">
-                                <a data-toggle="modal" data-target="#viewModal" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                                <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr> --}}
+
                         </table>
                     </div>
                 </div>

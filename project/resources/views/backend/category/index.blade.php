@@ -77,7 +77,7 @@
   </div>
 
     <!-- Edit Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="editCatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -91,12 +91,11 @@
                     <form action="" id="editDataForm" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" id="edit_name">
-                            <input type="hidden" class="form-control" id="edit_id">
+                            {{-- <input type="hidden" class="form-control" id="edit_id"> --}}
                             <span class="text-danger" id="catNameError"></span>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" id="edit_slug">
-                            <input type="hidden" class="form-control" id="edit_slug">
                             <span class="text-danger" id="catNameError"></span>
                         </div>
 
@@ -134,7 +133,7 @@
                     <td class="text-center">
                         <a href="" class="btn btn-sm btn-success" data-id="${item.slug}" data-toggle="modal" data-target="#viewModal" id="viewRow"><i class="fa fa-eye"></i></a>
 
-                        <a href="" class="btn btn-sm btn-info" data-id="${item.slug}" data-toggle="modal" data-target="#editModal" id="editRow"><i class="fa fa-edit"></i></a>
+                        <a href="" class="btn btn-sm btn-info" data-id="${item.slug}" data-toggle="modal" data-target="#editCatModal" id="editRow"><i class="fa fa-edit"></i></a>
 
                         <a href="" id="deleteRow" class="btn btn-sm btn-danger" data-id="${item.slug}"><i class="fa fa-trash-alt"></i></a>
                     </td>
@@ -256,30 +255,29 @@
                 .then(res => {
                     let {
                         data
-                    } = res
+                    } = res;
+                    // let form = $('#editDataForm');
                     $('#edit_name').val(data.name)
                     $('#edit_slug').val(data.slug)
-                    $('#edit_id').val(data.id)
+                    // $('#edit_id').val(data.id)
                     // console.log(data);
                 });
         });
 
         // Update
-
         $('body').on('submit', '#editDataForm', function(e) {
             e.preventDefault()
             let name = $('#edit_name').val()
             let slug = $('#edit_slug').val()
-            let id = $('#edit_id').val()
-            let url = `${admin_base_url}/category/update/${id}`
+            let url = `${admin_base_url}/category/update/${slug}`
 
             axios.post(url, {
                 name,
                 slug
             }).then(res => {
-                getAllCategory();
+
                 setSuccessAlert('Data Update Successfully!')
-                $('#editModal').modal('toggle')
+                $('#editCatModal').modal('toggle')
             }).catch(err => {
 
             })
