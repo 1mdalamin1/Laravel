@@ -22,15 +22,17 @@ Route::prefix('admin')->name('admin')->group(function() {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
         Route::get('/all', [CategoryController::class, 'all'])->name('all');
         Route::get('/{category}', [CategoryController::class, 'show'])->name('show');
-        Route::post('category', [CategoryController::class, 'store'])->name('store');
+        Route::post('/store', [CategoryController::class, 'store'])->name('store');
+
         Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('destroy');
-        Route::post('/update/{category}', [CategoryController::class, 'update'])->name('update');
+        Route::post('/update/{id}', [CategoryController::class, 'update'])->name('update');
     });
 
     # Sub Category
     Route::prefix('sub-cat')->name('sub-cat.')->controller(SubCategoryController::class)->group(function() {
         Route::get('/', 'index')->name('index'); // add by me
         Route::post('/store', 'store')->name('store'); // add by me
+
         Route::get('/all', 'getAllSubCat')->name('all'); // add by me
         Route::get('/{id}', 'view')->name('view'); // add by me
         Route::delete('{category}', 'destroy')->name('destroy'); // add by me

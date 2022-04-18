@@ -32,7 +32,7 @@
                <h3 class="text-info">Add Category</h3>
            </div>
            <div class="card-body">
-               <form action="" id="addCategoryForm">
+               <form action=""  method="POST" id="addCategoryForm">
                    <div class="form-group">
                        <input type="text" class="form-control" id="name" placeholder="Category Name">
                        <span class="text-danger" id="catNameError"></span>
@@ -88,7 +88,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="editForm">
+                    <form action="" id="editDataForm" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" id="edit_name">
                             <input type="hidden" class="form-control" id="edit_id">
@@ -142,17 +142,49 @@
                 `
             });
             loop = loop.join("")
-            const tbody = $$('#catTbody')
-            tbody.innerHTML = loop
+            const tbody = $('#catTbody')
+            tbody.html(loop)
             // log(tbody);
         }
+
+        // store
+        $('#addCategoryForm').on('submit', function(e) {
+            e.preventDefault();
+            let name = $('#name')
+            // let slug = $('#slug')
+            let catNameError = $('#catNameError')
+            catNameError.text("")
+
+            if (name.val() === '') {
+                catNameError.text("Filed must not be empty!")
+                return
+            }
+            let data = {
+                name: name.val(),
+                // category_id: category_id.val()
+            }
+            let url = `${admin_base_url}/category/store`
+            axios.post(url, data)
+                .then(res => {
+                    getAllCategory();
+                    name.val('');
+                    // category_id.val('');
+                    setSuccessAlert(res.data.mgs)
+                }).catch(err => {
+                    if (err.response.data.errors.name) {
+                        catNameError.text(err.response.data.errors.name[0])
+
+                    }
+
+                })
+        });
 
         // view
 
         $('body').on('click', '#viewRow', function(){
-            let slug = $(this).data('id');
+            let id = $(this).data('id');
 
-            let url = `${admin_base_url}/category/${slug}`
+            let url = `${admin_base_url}/category/${id}`
 
             axios.get(url).then(res => {
                 let response = `
@@ -165,8 +197,8 @@
                     <th><img src="${res.data.name}" alt=""></th>
                 </tr>
                 `
-                let tby = $$('#viewCatTbody')
-                tby.innerHTML = response
+                let tby = $('#viewCatTbody')
+                tby.html(response)
             })
         });
 
@@ -227,8 +259,9 @@
                     } = res
                     $('#edit_name').val(data.name)
                     $('#edit_slug').val(data.slug)
+                    $('#edit_id').val(data.id)
                     // console.log(data);
-                })
+                });
         });
 
         // Update
@@ -237,13 +270,14 @@
             e.preventDefault()
             let name = $('#edit_name').val()
             let slug = $('#edit_slug').val()
-            let url = `${admin_base_url}/category/update/${slug}`
+            let id = $('#edit_id').val()
+            let url = `${admin_base_url}/category/update/${id}`
 
             axios.post(url, {
                 name,
                 slug
             }).then(res => {
-                getAllCategoty();
+                getAllCategory();
                 setSuccessAlert('Data Update Successfully!')
                 $('#editModal').modal('toggle')
             }).catch(err => {

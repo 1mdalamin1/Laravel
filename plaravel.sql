@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 10:17 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Apr 18, 2022 at 03:08 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -67,7 +68,11 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Boy', 'boy', NULL, NULL, NULL),
-(2, 'Girl', 'girl', NULL, NULL, NULL);
+(2, 'Girl', 'girl', NULL, NULL, NULL),
+(3, 'Tanvir', 'tanvir', NULL, NULL, NULL),
+(4, 'Nitu', 'nitu', NULL, NULL, NULL),
+(6, 'test-2', 'test-2', NULL, NULL, NULL),
+(7, 'Suti Akter', 'Suti Akter', NULL, '2022-04-17 19:05:02', '2022-04-17 19:05:02');
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -134,7 +139,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `abilities` text COLLATE utf8_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -160,8 +165,14 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `name`, `slug`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'trjyhj', 'dfh', 0, NULL, NULL),
-(2, 'gfhf', 'dffd', 0, NULL, NULL);
+(1, 'Mahi', 'mahi', 2, NULL, '2022-04-17 03:28:38'),
+(3, 'Onamica', 'onameica', 4, NULL, NULL),
+(4, 'Afroza', 'afroza', 2, NULL, '2022-04-17 04:18:24'),
+(5, 'Tanvir', 'tanvir', 1, '2022-04-17 02:45:11', '2022-04-17 02:45:11'),
+(6, 'Faria', 'faria', 2, '2022-04-17 02:47:21', '2022-04-17 02:47:21'),
+(7, 'Tonny', 'tonny', 2, '2022-04-17 03:07:55', '2022-04-17 03:07:55'),
+(8, 'Afrin', 'afrin', 2, '2022-04-17 03:19:43', '2022-04-17 03:19:43'),
+(9, 'Afnanf', 'afnanf', 1, '2022-04-17 18:26:25', '2022-04-17 18:26:39');
 
 -- --------------------------------------------------------
 
@@ -258,7 +269,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -282,7 +293,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
