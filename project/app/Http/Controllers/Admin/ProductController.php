@@ -10,6 +10,7 @@ use App\Models\Color;
 use App\Models\Product;
 use App\Models\Size;
 use Illuminate\Http\Request;
+// use Illuminate\Support\strtolower;
 
 class ProductController extends Controller
 {
@@ -83,7 +84,7 @@ class ProductController extends Controller
         // return Product::find(1)->sliders;
         $product = Product::create([
             'name' => $request->name,
-            'slug' => str($request->name)->slug(),
+            'slug' =>  strtolower($request->name),
             'category_id' => $request->category_id,
             'sub_cat_id' => $request->sub_cat_id,
             'color_id' => $request->color_id,
@@ -109,7 +110,7 @@ class ProductController extends Controller
             $oldImg = $product->image;
             $product->update([
                 'name' => $request->name,
-                'slug' => str($request->name)->slug(),
+                'slug' =>  strtolower($request->name),
                 'category_id' => $request->category_id,
                 'sub_cat_id' => $request->sub_cat_id,
                 'color_id' => $request->color_id,
@@ -123,7 +124,7 @@ class ProductController extends Controller
         } else {
             $product->update([
                 'name' => $request->name,
-                'slug' => str($request->name)->slug(),
+                'slug' =>  strtolower($request->name),
                 'category_id' => $request->category_id,
                 'sub_cat_id' => $request->sub_cat_id,
                 'color_id' => $request->color_id,
@@ -131,6 +132,7 @@ class ProductController extends Controller
                 'description' => $request->description,
                 'price' => $request->price,
                 'sell_price' => $request->sell_price,
+
             ]);
         }
 

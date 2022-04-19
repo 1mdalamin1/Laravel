@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-42:33s/52:58s => https://www.youtube.com/watch?v=Q5IAnigseIs&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=29
+56:43s/01:03:46s => https://www.youtube.com/watch?v=uq6i-4hjHhM&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=30
 
 php artisan = pa
 
@@ -79,9 +79,14 @@ php artisan make:controller Admin/ProductController
 
 
 
+php artisan make:seeder CategorySeeder
+php artisan make:seeder SubCategorySeeder
 
 
+php artisan migrate:fresh --seed
 
+php artisan make:request ProductRequest
+php artisan make:model ProductSlider -m
 
 
 
