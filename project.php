@@ -118,6 +118,10 @@ php artisan route:clear
 php artisan config:clear
 php artisan cache:clear
 
+https://www.freepik.com/premium-vector/simple-id-card-design_2623288.htm#query=school%20id%20card%20simple&position=25&from_view=search
+
+https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#query=school%20id%20card%20simple&position=22&from_view=search
+
 
 */
 
