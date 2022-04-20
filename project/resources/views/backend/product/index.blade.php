@@ -8,8 +8,7 @@
             <div class="d-flex justify-content-between mb-2">
                 <h3>Manage Products</h3>
                 <div>
-                    {{-- <a href="{{ route('admin.product.create') }}" class="btn btn-success">Add New Product</a> --}}
-                    <a href="/admin/product/create" class="btn btn-success">Add New Product</a>
+                    <a href="{{ route('admin.product.create') }}" class="btn btn-success">Add New Product</a>
                 </div>
             </div>
             <table class="table table-bordered" id="productTable">
@@ -28,7 +27,7 @@
                             </td>
                             <td>{{ $product->category->name }}</td>
                             <td>
-                                <img src="{{ asset($product->image) }}" alt="" width="100px">
+                                <img src="{{ asset($product->image) }}" alt="" width="100px" height="70px">
                             </td>
                             <td class="text-center">
                                 <a href="{{ route('admin.product.view', $product->slug) }}"

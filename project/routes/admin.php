@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')->name('admin')->group(function() {
+Route::prefix('admin')->name('admin.')->group(function() {
 
     // Route::view('test', 'layouts.backend_master');
     Route::view('test', 'layouts.backend_app');

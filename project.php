@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-56:43s/01:03:46s => https://www.youtube.com/watch?v=uq6i-4hjHhM&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=30
+15:43s/33:54s => https://www.youtube.com/watch?v=tYBqM0QzsLQ&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=31
 
 php artisan = pa
 
@@ -87,7 +87,9 @@ php artisan migrate:fresh --seed
 
 php artisan make:request ProductRequest
 php artisan make:model ProductSlider -m
+php artisan storage:link
 
+php artisan route:list
 
 
 
@@ -110,6 +112,13 @@ testimonial-custom {
 .testimonial-custom {
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+
+php artisan optimize:clear
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear
+
+
 */
 
 

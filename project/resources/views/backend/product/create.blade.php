@@ -8,13 +8,13 @@
             <div class="d-flex justify-content-between mb-2">
                 <h3>Creage Product</h3>
                 <div>
-                    <a href="/admin/product" class="btn btn-success">Back</a>
-                    {{-- <a href="{{ route('admin.product.index') }}" class="btn btn-success">Back</a> --}}
+                    {{-- <a href="/admin/product" class="btn btn-success">Back</a> --}}
+                    <a href="{{ route('admin.product.index') }}" class="btn btn-success">Back</a>
                 </div>
             </div>
             <hr>
-            <form action="/admin/product/store" method="POST" enctype="multipart/form-data">
-            {{-- <form action="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data"> --}}
+            {{-- <form action="/admin/product/store" method="POST" enctype="multipart/form-data"> --}}
+            <form action="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-4 mb-2">
