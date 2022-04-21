@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-19:36s/25:28s => https://www.youtube.com/watch?v=c47wsArki30&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=32
+14:36s/39:22s => https://www.youtube.com/watch?v=R5PN-RTanYM&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=34
 
 php artisan = pa
 
@@ -74,7 +74,7 @@ php artisan make:controller Admin/ColorController
 php artisan migrate:fresh --seed
 
 php artisan make:model Product -mf
-php artisan make:controller Admin/ProductController 
+php artisan make:controller Admin/ProductController  
 
 
 
@@ -94,8 +94,19 @@ php artisan route:list
 php artisan make:factory ProductFactory
 php artisan migrate:fresh --seed
 
+php artisan make:model Customer -m
+php artisan make:controller Frontend/CustomerController
+php artisan make:controller Frontend/CartController
+php artisan make:controller Frontend/ProductController
+php artisan make:controller Frontend/HomeController
+php artisan make:controller Frontend/OrderController
 
+php artisan migrate
+php artisan optimize
 
+php artisan make:request CustomerLoginRequest
+php artisan make:model Cart -m
+php artisan make:controller Frontend/CartController
 
 
 
