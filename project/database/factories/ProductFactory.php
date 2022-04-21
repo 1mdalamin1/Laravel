@@ -4,6 +4,9 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ */
 class ProductFactory extends Factory
 {
     /**
@@ -14,7 +17,16 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->sentence(6),
+            'slug' => strtolower($this->faker->sentence(6)),
+            'category_id' => rand(1, 3),
+            'sub_cat_id' => rand(1, 3),
+            'color_id' => rand(1, 3),
+            'size_id' => rand(1, 3),
+            'description' => $this->faker->text(100),
+            'price' => rand(100, 200),
+            'sell_price' =>  rand(100, 200),
+            'image' => 'storage/product/default.png',
         ];
     }
 }

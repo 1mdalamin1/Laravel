@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-15:43s/33:54s => https://www.youtube.com/watch?v=tYBqM0QzsLQ&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=31
+19:36s/25:28s => https://www.youtube.com/watch?v=c47wsArki30&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=32
 
 php artisan = pa
 
@@ -91,7 +91,8 @@ php artisan storage:link
 
 php artisan route:list
 
-
+php artisan make:factory ProductFactory
+php artisan migrate:fresh --seed
 
 
 
