@@ -7,7 +7,7 @@
                   <div
                       class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                       <div class="newsletter_title_container">
-                          <div class="newsletter_icon"><img src="images/send.png" alt=""></div>
+                          <div class="newsletter_icon"><img src="{{ asset('frontend') }}/images/send.png" alt=""></div>
                           <div class="newsletter_title">Sign up for Newsletter</div>
                           <div class="newsletter_text">
                               <p>...and receive %20 coupon for first shopping.</p>
@@ -36,7 +36,7 @@
               <div class="col-lg-3 footer_col">
                   <div class="footer_column footer_contact">
                       <div class="logo_container">
-                          <div class="logo"><a href="#">OneTech</a></div>
+                          <div class="logo"><a href="/"><img src="{{ asset('frontend') }}/img/vir.png" alt="" srcset=""></a></div>
                       </div>
                       <div class="footer_title">Got Question? Call Us 24/7</div>
                       <div class="footer_phone">+38 068 005 3570</div>
@@ -125,10 +125,10 @@
                       </div>
                       <div class="logos ml-sm-auto">
                           <ul class="logos_list">
-                              <li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-                              <li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-                              <li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-                              <li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
+                              <li><a href="#"><img src="{{ asset('frontend') }}/images/logos_1.png" alt=""></a></li>
+                              <li><a href="#"><img src="{{ asset('frontend') }}/images/logos_2.png" alt=""></a></li>
+                              <li><a href="#"><img src="{{ asset('frontend') }}/images/logos_3.png" alt=""></a></li>
+                              <li><a href="#"><img src="{{ asset('frontend') }}/images/logos_4.png" alt=""></a></li>
                           </ul>
                       </div>
                   </div>

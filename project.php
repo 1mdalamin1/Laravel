@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-14:36s/39:22s => https://www.youtube.com/watch?v=R5PN-RTanYM&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=34
+0:0s/36:12s => https://www.youtube.com/watch?v=d-crv3o1z9M&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=35
 
 php artisan = pa
 
@@ -107,7 +107,7 @@ php artisan optimize
 php artisan make:request CustomerLoginRequest
 php artisan make:model Cart -m
 php artisan make:controller Frontend/CartController
-
+php artisan migrate
 
 
 

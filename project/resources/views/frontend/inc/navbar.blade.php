@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col d-flex flex-row">
                 <div class="top_bar_contact_item">
-                    <div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+38 068 005 3570
+                    <div class="top_bar_icon"><img src="{{ asset('frontend') }}/images/phone.png" alt=""></div>+38 068 005 3570
                 </div>
                 <div class="top_bar_contact_item">
-                    <div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a
+                    <div class="top_bar_icon"><img src="{{ asset('frontend') }}/images/mail.png" alt=""></div><a
                         href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
                 </div>
                 <div class="top_bar_content ml-auto">
@@ -31,7 +31,7 @@
                         </ul>
                     </div>
                     <div class="top_bar_user">
-                        <div class="user_icon"><img src="images/user.svg" alt=""></div>
+                        <div class="user_icon"><img src="{{ asset('frontend') }}/images/user.svg" alt=""></div>
                         <div><a href="{{ route('customer.register') }}">Register</a></div>
                         <div><a href="{{ route('customer.login') }}">Sign in</a></div>
                     </div>
@@ -50,7 +50,7 @@
             <!-- Logo -->
             <div class="col-lg-2 col-sm-3 col-3 order-1">
                 <div class="logo_container">
-                    <div class="logo"><a href="#">OneTech</a></div>
+                    <div class="logo"><a href="/"><img src="{{ asset('frontend') }}/img/vir.png" alt="" srcset=""></a></div>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
                                     placeholder="Search for products...">
 
                                 <button type="submit" class="header_search_button trans_300" value="Submit"><img
-                                        src="images/search.png" alt=""></button>
+                                        src="{{ asset('frontend') }}/images/search.png" alt=""></button>
                             </form>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <div class="cart">
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
-                                    <img src="images/cart.png" alt="">
+                                    <img src="{{ asset('frontend') }}/images/cart.png" alt="">
                                     <div class="cart_count">
                                         <span>{{ auth('customer')->user()->cartItems() }}</span>
                                     </div>
