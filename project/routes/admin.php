@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Backend\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->group(function() {
@@ -56,6 +57,15 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('inActive/{product}', 'inActive')->name('inActive');
 
         Route::post('update/{product}', 'update')->name('update');
+    });
+
+
+    # Order
+    Route::prefix('order')->name('order.')->controller(OrderController::class)->group(function () {
+
+        Route::get('/', 'index')->name('index');
+        Route::get('/details/{order}', 'details')->name('details');
+        Route::post('/status/{order}', 'status')->name('status');
     });
 
 });

@@ -21,7 +21,7 @@ php artisan optimize | for remove cash
 
 https://www.facebook.com/aristrocratbuffetlounge/
 
-3:44s/21:12s => https://www.youtube.com/watch?v=pIC_AXAlySI&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=36
+24:43s/29:48s => https://www.youtube.com/watch?v=_SolfIYN0a0&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=37
 
 php artisan = pa
 
@@ -120,6 +120,7 @@ php artisan make:controller Frontend/OrderController
 php artisan make:middleware PreventEmptyOrder
 
 
+php artisan make:controller Backend/OrderController
 
 
 
