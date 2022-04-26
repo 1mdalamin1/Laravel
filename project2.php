@@ -2,9 +2,10 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-13:47s/51:24s => https://www.youtube.com/watch?v=VqrDeV-Hu1Y&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=15
+6:20s/1:20:54s => https://www.youtube.com/watch?v=yYMBiOUtqrs&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=17
 
-Database design  | => https://drawsql.app/home
+Database design  | => https://drawsql.app/vir-za/diagrams/project2#
+Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
 |--------------------------------------------------------------------------
 |You Can user project_login_logout.zip with Breeze ---> https://github.com/1mdalamin1/Laravel/tree/project
@@ -19,20 +20,44 @@ i wont to use laravel only backend api & frontend vue.js|react.js
 /*
 php artisan optimize | for remove cash
 
-https://www.facebook.com/aristrocratbuffetlounge/
 
-24:43s/29:48s => https://www.youtube.com/watch?v=_SolfIYN0a0&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=37
-
-php artisan = pa
-
-36 | Project Planning | => https://drawsql.app/vir-za/diagrams/project#
-___________________________________________________________
-composer create-project laravel/laravel:^8.0 project
+composer create-project laravel/laravel:^8.0 project2
  
-cd project
+cd project2
  
 php artisan serve
-php artisan make:model Admin -m
+php artisan make:model Admin -m | don't need to ex user model&migration file edit to Admin
+
+php artisan make:model User -m
+php artisan make:model Group -m
+php artisan make:model Product -m
+php artisan make:model Category -m
+php artisan make:model SaleInvoice -m
+php artisan make:model SaleItems -m
+php artisan make:model PurchaseInvoice -m
+php artisan make:model PurchaseItems -m
+php artisan make:model Payments -m
+php artisan make:model Receipts -m
+php artisan migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 php artisan migrate
 php artisan migrate:fresh --seed
