@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-6:20s/1:20:54s => https://www.youtube.com/watch?v=yYMBiOUtqrs&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=17
+28:34s/1:20:54s => https://www.youtube.com/watch?v=yYMBiOUtqrs&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=17
 
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
@@ -40,7 +40,7 @@ php artisan make:model Payments -m
 php artisan make:model Receipts -m
 php artisan migrate
 
-
+{{ asset('backend') }}/
 
 
 
