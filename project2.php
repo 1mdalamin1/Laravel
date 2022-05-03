@@ -2,8 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-38:09s/1:20:54s => https://www.youtube.com/watch?v=yYMBiOUtqrs&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=17
-
+03:25s/49:18s => https://www.youtube.com/watch?v=yhCk8-Rey3c&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=20
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -45,8 +44,14 @@ php artisan migrate
 php artisan make:controller UsersController 
 php artisan make:controller UserGroupsController 
 
+composer require laravelcollective/html |=> for form functionality \/ https://laravelcollective.com/docs/6.x/html
 
+php artisan route:list |=> for check rout in application
 
+php artisan make:controller ProductController --resource
+
+php artisan make:request CreateUserRequest
+php artisan make:request UpdateUserRequest
 
 
 
@@ -113,7 +118,6 @@ php artisan make:seeder SubCategorySeeder
 
 php artisan migrate:fresh --seed
 
-php artisan make:request ProductRequest
 php artisan make:model ProductSlider -m
 php artisan storage:link
 

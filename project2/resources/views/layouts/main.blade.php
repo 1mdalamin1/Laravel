@@ -30,9 +30,9 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
+  {{-- <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{ asset('backend') }}/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
+  </div> --}}
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -228,6 +228,12 @@
                 <a href="{{ url('groups') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Group List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('groups/create')}}" class="nav-link">
+                  <i class="fa fa-plus nav-icon"></i>
+                  <p>Add Group</p>
                 </a>
               </li>
             </ul>
@@ -841,17 +847,42 @@
     <!-- /.sidebar -->
   </aside>
 
+
+
+
+
+
+
+
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+
+
+
+@if ( session('message'))
+<div class="alert alert-success" role="alert">{{ session('message') }}</div>
+
+@endif
+
+@yield('main_content')
+
+        {{-- <div class="row mb-2">
           @yield('main_content')
-        </div><!-- /.row -->
+        </div><!-- /.row --> --}}
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
+
+
+
+
+
+
 
     <!-- Main content -->
     <section class="content">
