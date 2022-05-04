@@ -47,6 +47,7 @@
                 <td> {{ $user->phone }} </td>
                 <td> {{ $user->address }} </td>
                 <td class="text-right d-flex">
+                    <a href="{{ route('users.show', ['user'=> $user->id]) }}" class="btn btn-success mr-1  btn-sm"><i class="fa fa-eye"></i></a>
                     <a href="{{ route('users.edit', ['user'=> $user->id]) }}" class="btn btn-info mr-1  btn-sm"><i class="fa fa-pen"></i></a>
                     <form method="POST" action=" {{ route('users.destroy',  ['user' => $user->id]) }} ">
                         @csrf

@@ -18,7 +18,8 @@
 
 	<div class="card shadow mb-4">
 	    <div class="card-header py-3">
-	      <h6 class="m-0 font-weight-bold text-primary">{{ $headline }}</h6>
+	     <a href="{{ url('users') }}" class="btn btn-warning"><i class="fa fa-arrow-left nav-icon"></i> Go back userList</a>
+
 	    </div>
 	    <div class="card-body">
 	    	<div class="row justify-content-md-center">

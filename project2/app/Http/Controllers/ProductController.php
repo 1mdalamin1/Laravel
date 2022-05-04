@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->data['main_manu']    = 'Products';
+    //     $this->data['sub_manu']     = 'Products';
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $this->data['products'] = Product::all();
+
+        return view('products.products', $this->data);
     }
 
     /**
@@ -24,7 +37,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $this->data['categories']   = Category::arrayForSelect();
+        $this->data['mode']         = 'create';
+        $this->data['headline']     = 'Add New Product';
+
+        return view('products.form', $this->data);
     }
 
     /**
@@ -33,9 +50,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $formData = $request->all();
+        if( Product::create($formData) ) {
+            Session::flash('message', 'Product Created Successfully');
+        }
+
+        return redirect()->to('products');
     }
 
     /**
@@ -46,7 +68,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->data['product'] = Product::find($id);
+
+        return view('products.show', $this->data);
     }
 
     /**
@@ -57,7 +81,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->data['product']      = Product::findOrFail($id);
+        $this->data['categories']   = Category::arrayForSelect();
+        $this->data['mode']         = 'edit';
+        $this->data['headline']     = 'Update Product Information';
+
+        return view('products.form', $this->data);
     }
 
     /**
@@ -67,9 +96,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        $data                   = $request->all();
+
+        $product                = Product::find($id);
+        $product->category_id   = $data['category_id'];
+        $product->title         = $data['title'];
+        $product->description   = $data['description'];
+        $product->cost_price    = $data['cost_price'];
+        $product->price         = $data['price'];
+        // $product->has_stock     = $data['has_stock'];
+
+        if( $product->save() ) {
+            Session::flash('message', 'Product Updated Successfully');
+        }
+
+        return redirect()->to('products');
     }
 
     /**
@@ -80,6 +123,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if( Product::destroy($id) ) {
+            Session::flash('message', 'Product Deleted Successfully');
+        }
+
+        return redirect()->to('products');
     }
 }

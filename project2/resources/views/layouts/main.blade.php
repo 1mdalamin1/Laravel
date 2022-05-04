@@ -225,6 +225,25 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ url('users/create') }}" class="nav-link active">
+                  <i class="fa fa-plus nav-icon"></i>
+                  <p>Add User</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                All Group
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
                 <a href="{{ url('groups') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Group List</p>
@@ -238,15 +257,7 @@
               </li>
             </ul>
           </li>
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Products
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li> --}}
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -258,53 +269,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('groups') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categories</p>
+                <a href="{{ route('categories.index') }}" class="nav-link">
+                  <i class="fa fa-list-ul" aria-hidden="true"></i>
+                  <p>Categories all</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('groups') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{ route('categories.create') }}" class="nav-link">
+                    <i class="fa fa-plus"></i>
+                    <p>New Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('products') }}" class="nav-link">
+                  <i class="fa fa-balance-scale" aria-hidden="true"></i>
                   <p>Products</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#layout/boxed.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
+                <a href="{{ route('products.create') }}" class="nav-link">
+                    <i class="fa fa-plus"></i>
+                    <p>add Product</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#layout/fixed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#layout/fixed-sidebar-custom.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar <small>+ Custom Area</small></p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#layout/fixed-topnav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#layout/fixed-footer.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
-                </a>
-              </li>
+
+
             </ul>
           </li>
           <li class="nav-item">
@@ -322,24 +311,7 @@
                   <p>ChartJS</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#charts/uplot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
-                </a>
-              </li>
+
             </ul>
           </li>
           <li class="nav-item">

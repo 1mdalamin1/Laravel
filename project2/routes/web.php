@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserGroupsController;
 use Illuminate\Support\Facades\Route;
@@ -50,13 +52,8 @@ Route::POST('users/{user}', [UsersController::class, 'destroy']);
 Route::POST('users/{user}/edit', [UsersController::class, 'edit']);
 */
 
-// Route::get('users', function () {
-//     return view('users/users');
-// });
-
-// Route::get('groups', function () {
-//     return view('groups/groups');
-// });
+Route::resource('categories', CategoryController::class, ['except' => ['show'] ]);
+Route::resource('products', ProductController::class);
 
    # Group Routers
 // Route::prefix('order')->name('order.')->controller(OrderController::class)->group(function () {

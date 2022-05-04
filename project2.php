@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-03:25s/49:18s => https://www.youtube.com/watch?v=yhCk8-Rey3c&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=20
+03:05s/1:00:52s => https://www.youtube.com/watch?v=MaO4T_Y84HM&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=22
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -53,6 +53,10 @@ php artisan make:controller ProductController --resource
 php artisan make:request CreateUserRequest
 php artisan make:request UpdateUserRequest
 
+php artisan make:controller CategoryController -r || -r = resource
+php artisan make:request CategoryRequest
+php artisan make:request ProductRequest
+
 
 
 
@@ -86,7 +90,6 @@ php artisan make:request AdminAuthRequest
 
 php artisan make:model Category -m || => https://drawsql.app/vir-za/diagrams/project
 php artisan make:controller Admin/CategoryController -r
-php artisan make:controller Admin/SubCategoryController -r
 php artisan make:model SubCategory -m
 
 
