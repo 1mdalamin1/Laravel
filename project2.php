@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-03:05s/1:00:52s => https://www.youtube.com/watch?v=MaO4T_Y84HM&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=22
+03:44s/1:03:27s => https://www.youtube.com/watch?v=vD3fjDdXnK0&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=23
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -57,7 +57,12 @@ php artisan make:controller CategoryController -r || -r = resource
 php artisan make:request CategoryRequest
 php artisan make:request ProductRequest
 
+php artisan make:controller Auth/LoginController 
+php artisan make:request LoginRequest
 
+php artisan make:migration add_admin | for create a admin
+php artisan migrate
+php artisan config:cache
 
 
 
@@ -105,7 +110,6 @@ Real Project must be use fileable not guarded | cause fileable succerut more the
 php artisan make:model Color -ms
 php artisan make:model Size -ms
 php artisan make:controller Admin/SizeController 
-php artisan make:controller Admin/ColorController 
 
 php artisan migrate:fresh --seed
 

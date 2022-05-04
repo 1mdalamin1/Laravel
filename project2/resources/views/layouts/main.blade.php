@@ -47,6 +47,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('logout') }}" class="nav-link">Logout</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -188,7 +191,7 @@
           <img src="{{ asset('backend') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">User Tanvir</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -219,7 +222,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('users') }}" class="nav-link active">
+                <a href="{{ url('users') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User list</p>
                 </a>
@@ -866,15 +869,14 @@
         <div class="row">
           <!-- Left col -->
           <div class="col-md-6">
-          <div class="clock-right">
-            <h1 id="clock">00:00:00</h1>
-        </div>
-        <canvas id="canvas" width="400" height="400" style="text-align:center">
-        </canvas>
-    </div>
+            <div class="clock-right">
+                <h1 id="clock">00:00:00</h1>
+            </div>
+            <canvas id="canvas" width="400" height="400" style="text-align:center"></canvas>
+          </div>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class=" col-md-6 connectedSortable">
+          <div class=" col-md-6">
 
             <!-- Map card -->
             <div class="card bg-gradient-primary">
@@ -964,7 +966,7 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </section>
+          </div>
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
