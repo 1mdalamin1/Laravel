@@ -60,7 +60,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('users', UsersController::class); // except -> create route without show
     Route::get('users/{id}/sales', [UserSalesController::class, 'index'])->name('user.sales');
     Route::get('users/{id}/purchases', [UserPurchasesController::class, 'index'])->name('users.purchases');
+
     Route::get('users/{id}/payments', [UserPaymentsController::class, 'index'])->name('users.payments');
+    Route::post('users/{id}/payments', [UserPaymentsController::class, 'store'])->name('user.payments.store');
+    Route::delete('users/{id}/payments/{payment_id}', [UserPaymentsController::class, 'destroy'])->name('user.payments.destroy');
+
+
     Route::get('users/{id}/receipts', [UserReceiptsController::class, 'index'])->name('users.receipt');
     Route::get('users/{id}', [UserSalesController::class, 'index'])->name('user.show'); // dumie controlar
 

@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-45:54s/40:47s => video No:- 41 Laravel Project (Add New Payment)
+02:26s/39:03s => video No:- 42 Laravel Project (Add New Receipts)
 
 20:44s/1:03:27s => https://www.youtube.com/watch?v=vD3fjDdXnK0&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=23
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
@@ -75,7 +75,9 @@ php artisan make:controller UserReceiptsController
 php artisan make:request PaymentRequest
 php artisan make:request ReceiptRequest
 
+php artisan make:migration update_payment_and_receipt_note || php artisan migrate
 
+must be install for update migration table => composer require doctrine/dbal
 
 
 

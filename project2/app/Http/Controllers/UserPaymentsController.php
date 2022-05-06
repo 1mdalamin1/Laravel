@@ -65,7 +65,7 @@ class UserPaymentsController extends Controller
             Session::flash('message', 'Payment Deleted Successfully');
         }
 
-        return redirect()->route('user.payments', ['id' => $user_id]);
+        return redirect()->route('users.payments', ['id' => $user_id]);
     }
 
 }
