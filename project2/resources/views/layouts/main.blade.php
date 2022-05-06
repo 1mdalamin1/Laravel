@@ -51,8 +51,10 @@
         <a href="{{ route('logout') }}" class="nav-link">Logout</a>
       </li>
     </ul>
-
-    <!-- Right navbar links -->
+    <div class=" text-center">
+        <h1 id="clock">00:00:00</h1>
+    </div>
+    <!-- Right navbar links  clock-right-->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
@@ -868,15 +870,15 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-6">
+          {{-- <div class="col-md-6">
             <div class="clock-right">
                 <h1 id="clock">00:00:00</h1>
             </div>
             <canvas id="canvas" width="400" height="400" style="text-align:center"></canvas>
-          </div>
+          </div> --}}
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <div class=" col-md-6">
+          {{-- <div class=" col-md-6">
 
             <!-- Map card -->
             <div class="card bg-gradient-primary">
@@ -966,7 +968,7 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </div>
+          </div> --}}
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->

@@ -2,7 +2,9 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-03:44s/1:03:27s => https://www.youtube.com/watch?v=vD3fjDdXnK0&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=23
+45:54s/40:47s => video No:- 41 Laravel Project (Add New Payment)
+
+20:44s/1:03:27s => https://www.youtube.com/watch?v=vD3fjDdXnK0&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=23
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -64,6 +66,14 @@ php artisan make:migration add_admin | for create a admin
 php artisan migrate
 php artisan config:cache
 
+php artisan make:controller UserSalesController 
+php artisan make:request InvoiceProductRequest
+php artisan make:request InvoiceRequest
+php artisan make:controller UserPurchasesController 
+php artisan make:controller UserPaymentsController 
+php artisan make:controller UserReceiptsController 
+php artisan make:request PaymentRequest
+php artisan make:request ReceiptRequest
 
 
 
