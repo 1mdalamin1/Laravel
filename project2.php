@@ -2,9 +2,9 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-1:25:04s/1:13:11s => video No:- 44 Laravel Project (Add Receipts for invoice, Adding Card) 
+01:04s/1:25:58s => video No:- 45 Laravel Project (Add Purchase Invoice and Payment for the Invoice) 
 
-20:44s/1:13:11s => https://www.youtube.com/watch?v=LuhGb2A8WOc&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=26
+20:44s/1:13:11s => https://www.youtube.com/watch?v=FYp8rinRTic&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=28
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -81,6 +81,7 @@ must be install for update migration table => composer require doctrine/dbal
 
 php artisan make:migration add_note_to_sales_and_purchase_table || if wont to rollback php artisan migrate::rollback
 
+php artisan make:migration add_invoice_id_on_payments_and_receipts ||
 php artisan migrate
 
 

@@ -2,7 +2,10 @@
 
 @section('user_content')
 
-<div class="card-header">
+
+
+
+  <div class="card-header">
     <h2>Sales of <strong>{{ $user->name }} </strong></h2>
 </div>
 <!-- /.card-header -->
