@@ -158,7 +158,7 @@
 <div class="modal fade" id="newSale" tabindex="-1" role="dialog" aria-labelledby="newSaleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        {!! Form::open([ 'route' => ['user.receipts.store', $user->id], 'method' => 'post' ]) !!}
+        {!! Form::open([ 'route' => ['user.sales.store', $user->id], 'method' => 'post' ]) !!}
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="newSaleModalLabel"> New Sale Invoice </h5>
@@ -175,12 +175,13 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="amount" class="col-sm-3 col-form-label">Amount <span class="text-danger">*</span>
+                    <label for="challan_no" class="col-sm-3 col-form-label">Challan no <span class="text-danger">*</span>
                     </label>
                     <div class="col-sm-9">
-                        {{ Form::text('amount', NULL, [ 'class'=>'form-control', 'id' => 'amount', 'placeholder' => 'Amount', 'required' ]) }}
+                        {{ Form::text('challan_no', NULL, [ 'class'=>'form-control', 'id' => 'challan_no', 'placeholder' => 'challan_no', 'required' ]) }}
                     </div>
                 </div>
+
 
                 <div class="form-group row">
                     <label for="note" class="col-sm-3 col-form-label">Note </label>

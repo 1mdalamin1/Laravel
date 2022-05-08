@@ -13,8 +13,12 @@ class AddNoteToSalesAndPurchaseTable extends Migration
      */
     public function up()
     {
-        Schema::table('sales_and_purchase', function (Blueprint $table) {
-            //
+
+        Schema::table('sale_invoices', function (Blueprint $table) {
+            $table->text('note')->nullable()->after('date');
+        });
+        Schema::table('purchase_invoices', function (Blueprint $table) {
+            $table->text('note')->nullable()->after('date');
         });
     }
 
@@ -25,8 +29,12 @@ class AddNoteToSalesAndPurchaseTable extends Migration
      */
     public function down()
     {
-        Schema::table('sales_and_purchase', function (Blueprint $table) {
-            //
+
+        Schema::table('sale_invoices', function (Blueprint $table) {
+            $table->dropColumn('note');
+        });
+        Schema::table('purchase_invoices', function (Blueprint $table) {
+            $table->dropColumn('note');
         });
     }
 }

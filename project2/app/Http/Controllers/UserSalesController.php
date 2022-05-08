@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Session;
 class UserSalesController extends Controller
 {
 
-	public function __construct() 
+	public function __construct()
 	{
         parent::__construct();
 		$this->data['tab_menu'] = 'sales';
@@ -36,9 +36,14 @@ class UserSalesController extends Controller
     	$formData['user_id'] 	= $user_id;
     	$formData['admin_id'] 	= Auth::id();
 
-    	$invoice = SaleInvoice::create($formData);
+    	// $invoice = SaleInvoice::create($formData);
+        if( $invoice = SaleInvoice::create($formData) ) {
+            Session::flash('message', 'Sale Invoice Created Successfully');
+        }
 
         return redirect()->route( 'user.sales.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice->id] );
+
+
     }
 
 
@@ -62,6 +67,7 @@ class UserSalesController extends Controller
         }
 
         return redirect()->route( 'user.sales.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] );
+
     }
 
 
