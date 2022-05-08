@@ -13,7 +13,7 @@ class ReceiptRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class ReceiptRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'date' => 'required',
+            'amount' => 'required',
+            'note' => 'nullable',
         ];
     }
 }

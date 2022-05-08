@@ -41,7 +41,8 @@ class UserReceiptsController extends Controller
         if ($invoice_id) {
             return redirect()->route( 'user.sales.invoice_details', ['id' => $user_id, 'invoice_id' => $invoice_id] );
         } else {
-            return redirect()->route('users.show', ['user' => $user_id]);
+            // return redirect()->route('users.show', ['user' => $user_id]);
+            return redirect()->route('users.receipt', ['id' => $user_id]);
         }
 
     }
@@ -53,7 +54,7 @@ class UserReceiptsController extends Controller
             Session::flash('message', 'Receipt Deleted Successfully');
         }
 
-        return redirect()->route('user.receipts', ['id' => $user_id]);
+        return redirect()->route('users.receipt', ['id' => $user_id]);
     }
 
 

@@ -58,7 +58,18 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('groups/{id}', [UserGroupsController::class, 'destroy']);
 
     Route::resource('users', UsersController::class); // except -> create route without show
+
+
     Route::get('users/{id}/sales', [UserSalesController::class, 'index'])->name('user.sales');
+
+    Route::post('users/{id}/invoices', [UserSalesController::class, 'createInvoice'])->name('user.sales.store');
+    Route::get('users/{id}/invoices/{invoice_id}', [UserSalesController::class, 'invoice'])->name('user.sales.invoice_details');
+    Route::delete('users/{id}/invoices/{invoice_id}', [UserSalesController::class, 'destroy'])->name('user.sales.destroy');
+    Route::post('users/{id}/invoices/{invoice_id}', [UserSalesController::class, 'addItem'])->name('user.sales.invoices.add_item');
+    Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController::class, 'destroyItem'])->name('user.sales.invoices.delete_item');
+
+
+
     Route::get('users/{id}/purchases', [UserPurchasesController::class, 'index'])->name('users.purchases');
 
     Route::get('users/{id}/payments', [UserPaymentsController::class, 'index'])->name('users.payments');
@@ -67,6 +78,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 
     Route::get('users/{id}/receipts', [UserReceiptsController::class, 'index'])->name('users.receipt');
+    Route::post('users/{id}/receipts', [UserReceiptsController::class, 'store'])->name('user.receipts.store');
+    Route::delete('users/{id}/{receipt_id}', [UserReceiptsController::class, 'destroy'])->name('user.receipts.destroy');
+
+
     Route::get('users/{id}', [UserSalesController::class, 'index'])->name('user.show'); // dumie controlar
 
 
