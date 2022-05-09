@@ -69,8 +69,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('users/{id}/invoices/{invoice_id}/{item_id}', [UserSalesController::class, 'destroyItem'])->name('user.sales.invoices.delete_item');
 
 
-
     Route::get('users/{id}/purchases', [UserPurchasesController::class, 'index'])->name('users.purchases');
+    Route::post('users/{id}/purchases', [UserPurchasesController::class, 'createInvoice'])->name('user.purchases.store');
+    Route::get('users/{id}/purchases/{invoice_id}', [UserPurchasesController::class, 'invoice'])->name('user.purchases.invoice_details');
+    Route::delete('users/{id}/purchases/{invoice_id}', [UserPurchasesController::class, 'destroy'])->name('user.purchases.destroy');
+    Route::post('users/{id}/purchases/{invoice_id}', [UserPurchasesController::class, 'addItem'])->name('user.purchases.add_item');
+    Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesController::class, 'destroyItem'])->name('user.purchases.delete_item');
 
     Route::get('users/{id}/payments', [UserPaymentsController::class, 'index'])->name('users.payments');
     Route::post('users/{id}/payments', [UserPaymentsController::class, 'store'])->name('user.payments.store');

@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-01:04s/1:25:58s => video No:- 45 Laravel Project (Add Purchase Invoice and Payment for the Invoice) 
+30:04s/1:25:58s => video No:- 45 Laravel Project (Add Purchase Invoice and Payment for the Invoice) 
 
 20:44s/1:13:11s => https://www.youtube.com/watch?v=FYp8rinRTic&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=28
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
