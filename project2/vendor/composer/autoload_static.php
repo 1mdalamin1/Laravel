@@ -553,6 +553,7 @@ class ComposerStaticInit37a6bc6ef77c93edae78ca9f4b8303b8
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\ProductsStockController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductsStockController.php',
         'App\\Http\\Controllers\\UserGroupsController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserGroupsController.php',
         'App\\Http\\Controllers\\UserPaymentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserPaymentsController.php',
         'App\\Http\\Controllers\\UserPurchasesController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserPurchasesController.php',

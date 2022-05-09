@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductsStockController;
+use App\Http\Controllers\Reports\DayReportsController;
+use App\Http\Controllers\Reports\SaleReportController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UserPaymentsController;
@@ -77,7 +80,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('users/{id}/purchases/{invoice_id}/{item_id}', [UserPurchasesController::class, 'destroyItem'])->name('user.purchases.delete_item');
 
     Route::get('users/{id}/payments', [UserPaymentsController::class, 'index'])->name('users.payments');
-    Route::post('users/{id}/payments', [UserPaymentsController::class, 'store'])->name('user.payments.store');
+    Route::post('users/{id}/payments/{invoice_id?}', [UserPaymentsController::class, 'store'])->name('user.payments.store');
     Route::delete('users/{id}/payments/{payment_id}', [UserPaymentsController::class, 'destroy'])->name('user.payments.destroy');
 
 
@@ -104,7 +107,19 @@ Route::group(['middleware' => 'auth'], function(){
     */
 
     Route::resource('categories', CategoryController::class, ['except' => ['show'] ]);
+
+
     Route::resource('products', ProductController::class);
+    Route::get('stocks', [ProductsStockController::class, 'index'])->name('stocks');
+
+
+
+    Route::get('reports/sales', [SaleReportController::class, 'index'])->name('reports.sales');
+    Route::get('reports/purchases', [SaleReportController::class, 'index'])->name('reports.purchases');
+    Route::get('reports/payments', [SaleReportController::class, 'index'])->name('reports.payments');
+    Route::get('reports/receipts', [SaleReportController::class, 'index'])->name('reports.receipts');
+
+    Route::get('reports/days', [DayReportsController::class, 'index'])->name('reports.days');
 
 });
 

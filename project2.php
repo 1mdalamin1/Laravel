@@ -2,9 +2,8 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-30:04s/1:25:58s => video No:- 45 Laravel Project (Add Purchase Invoice and Payment for the Invoice) 
-
-20:44s/1:13:11s => https://www.youtube.com/watch?v=FYp8rinRTic&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=28
+31:00s/1:04:00s => video No:- 47 Laravel Project 
+31:00s/1:04:00s => https://www.youtube.com/watch?v=p9UH4XQ9JNg&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=29
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -84,7 +83,16 @@ php artisan make:migration add_note_to_sales_and_purchase_table || if wont to ro
 php artisan make:migration add_invoice_id_on_payments_and_receipts ||
 php artisan migrate
 
+php artisan make:controller ProductsStockController 
 
+php artisan make:migration add_has_stock_on_products_table --table=products ||
+
+php artisan make:controller Reports/SaleReportController
+php artisan make:controller Reports/DayReportsController
+
+
+
+php artisan migrate
 
 
 
