@@ -2,8 +2,8 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-31:00s/1:04:00s => video No:- 47 Laravel Project 
-31:00s/1:04:00s => https://www.youtube.com/watch?v=p9UH4XQ9JNg&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=29
+30:36s/45:25s => video No:- 50 Laravel Project (Update Products Stock and Invoice Item)
+30:36s/45:25s => https://www.youtube.com/watch?v=yaWnsjSU9Ns&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=32
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
 
@@ -89,10 +89,24 @@ php artisan make:migration add_has_stock_on_products_table --table=products ||
 
 php artisan make:controller Reports/SaleReportController
 php artisan make:controller Reports/DayReportsController
+php artisan make:controller DashboardController
 
 
 
 php artisan migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

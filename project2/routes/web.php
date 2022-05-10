@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductsStockController;
 use App\Http\Controllers\Reports\DayReportsController;
 use App\Http\Controllers\Reports\SaleReportController;
@@ -47,10 +48,11 @@ Route::post('login', [LoginController::class, 'authenticate'])->name('login.conf
 
 Route::group(['middleware' => 'auth'], function(){
 
-    Route::get('dashboard', function () {
-        return Auth::user();
-        return view('welcome');
-    });
+    Route::get('dashboard', [DashboardController::class, 'index']);
+    // Route::get('dashboard', function () {
+    //     return Auth::user();
+    //     return view('welcome');
+    // });
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 

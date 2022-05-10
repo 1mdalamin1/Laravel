@@ -12,6 +12,7 @@
               foreach ($user->sales as $key => $sale) {
                   $total += $sale->items()->sum('total');
               }
+              $totalSales = $total;
               echo $total;
           @endphp</h3>
 
@@ -30,18 +31,20 @@
         <div class="inner">
           <h3>
             @php
-                $total = 0;
-                foreach ($user->sales as $key => $sale) {
-                    $total += $sale->items()->sum('total');
-                }
-                echo $total;
+
+            $totalPurchase = 0;
+            foreach ($user->purchases as $purchase) {
+              $totalPurchase += $purchase->items()->sum('total');
+            }
+            echo $totalPurchase;
             @endphp
+
               <sup style="font-size: 20px">৳</sup></h3>
 
           <p>Total Purchases</p>
         </div>
         <div class="icon">
-          <i class="ion ion-stats-bars"></i>
+          <i class="fa fa-man"></i>
         </div>
         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
       </div>
@@ -52,7 +55,9 @@
       <div class="small-box bg-warning">
         <div class="inner">
           <h3>{{ $user->receipts()->sum('amount') }}</h3>
-
+@php
+    $totalRecept = $user->receipts()->sum('amount');
+@endphp
           <p>Total Receipts</p>
         </div>
         <div class="icon">
@@ -67,8 +72,30 @@
       <div class="small-box bg-danger">
         <div class="inner">
           <h3>{{ $user->payments()->sum('amount') }}</h3>
-
+@php
+    $totalPayment = $user->payments()->sum('amount');
+@endphp
           <p>Total Payments</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-pie-graph"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+
+    <div class="col-lg-3 col-6">
+      <!-- small box -->
+      <div class="small-box bg-danger">
+        <div class="inner">
+          <h3>
+            @php
+                 $totalBalance = ($totalPurchase + $totalRecept) - ($totalSales + $totalPayment);
+            @endphp
+          </h3>
+
+          <p>Total Balance</p>
         </div>
         <div class="icon">
           <i class="ion ion-pie-graph"></i>
