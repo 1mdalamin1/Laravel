@@ -12,6 +12,7 @@ use App\Http\Controllers\UserGroupsController;
 use App\Http\Controllers\UserPaymentsController;
 use App\Http\Controllers\UserPurchasesController;
 use App\Http\Controllers\UserReceiptsController;
+use App\Http\Controllers\UserReportsController;
 use App\Http\Controllers\UserSalesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -110,6 +111,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::resource('categories', CategoryController::class, ['except' => ['show'] ]);
 
+    Route::get('users/{id}/reports', [UserReportsController::class, 'reports'])->name('users.reports');
 
     Route::resource('products', ProductController::class);
     Route::get('stocks', [ProductsStockController::class, 'index'])->name('stocks');

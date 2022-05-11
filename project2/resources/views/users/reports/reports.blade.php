@@ -4,7 +4,7 @@
 
 
 	<div class="row">
-		
+
 		<!-- Earnings (Monthly) Card Example -->
 	    <div class="col-xl-3 col-6 mb-4">
 	      <div class="card border-left-primary shadow h-100 py-2">
@@ -72,7 +72,7 @@
 	        </div>
 	      </div>
 	    </div>
-	    
+
 	</div>
 
 	<!-- Sales Reports -->
@@ -91,7 +91,7 @@
 	              	<th class="text-right">Total</th>
 	            </tr>
 	          </thead>
-	          
+
 	          <tbody>
 	          	@foreach ($sales as $sale)
 		            <tr>
@@ -135,7 +135,7 @@
 	              	<th class="text-right">Total</th>
 	            </tr>
 	          </thead>
-	          
+
 	          <tbody>
 	          	@foreach ($purchases as $purchase)
 		            <tr>
@@ -167,7 +167,7 @@
 	    <div class="card-header py-3">
 	      <h6 class="m-0 font-weight-bold text-primary"> Receipts Report </strong></h6>
 	    </div>
-	    
+
 	    <div class="card-body">
 	    	<div class="table-responsive">
 		        <table class="table table-striped table-borderless table-sm" width="100%" cellspacing="0">
@@ -177,7 +177,7 @@
 		              <th class="text-right">Total</th>
 		            </tr>
 		          </thead>
-		          
+
 		          <tbody>
 		          	@foreach ($receipts as $receipt)
 			            <tr>
@@ -203,7 +203,7 @@
 	    <div class="card-header py-3">
 	      <h6 class="m-0 font-weight-bold text-primary"> Payments Report </strong></h6>
 	    </div>
-	    
+
 	    <div class="card-body">
 	    	<div class="table-responsive">
 		        <table class="table table-striped table-borderless table-sm" width="100%" cellspacing="0">
@@ -213,7 +213,7 @@
 		              <th class="text-right">Total</th>
 		            </tr>
 		          </thead>
-		          
+
 		          <tbody>
 		          	@foreach ($payments as $payment)
 			            <tr>
@@ -233,6 +233,6 @@
 		    </div>
 	    </div>
   	</div>
-  	
+
 
 @stop

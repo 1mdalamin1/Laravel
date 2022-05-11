@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->data['main_manu']    = 'Products';
-    //     $this->data['sub_manu']     = 'Products';
-    // }
+    public function __construct()
+    {
+        parent::__construct();
+        $this->data['main_manu']    = 'Products';
+        $this->data['sub_manu']     = 'Products';
+    }
 
     /**
      * Display a listing of the resource.
@@ -106,7 +106,7 @@ class ProductController extends Controller
         $product->description   = $data['description'];
         $product->cost_price    = $data['cost_price'];
         $product->price         = $data['price'];
-        // $product->has_stock     = $data['has_stock'];
+        $product->has_stock     = $data['has_stock'];
 
         if( $product->save() ) {
             Session::flash('message', 'Product Updated Successfully');

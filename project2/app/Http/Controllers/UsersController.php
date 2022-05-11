@@ -23,6 +23,13 @@ class UsersController extends Controller
         return view('users.users', $this->data);
     }
 
+    public function reports($id)
+    {
+        $this->data['users'] = User::findOrFail($id);
+
+        return view('users.reports.reports', $this->data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

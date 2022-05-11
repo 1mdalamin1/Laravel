@@ -7,6 +7,8 @@
                     <a href="{{ route('users.show', $user->id) }}"
                         class="btn @if($tab_menu == 'user_info') btn-success @else btn-dark @endif  d-block mb-2 btn-sm">User
                         Info</a>
+                    <a href="{{ route('users.reports', $user->id) }}"
+                        class="btn @if($tab_menu == 'reports') btn-success @else btn-dark @endif  d-block mb-2 btn-sm">Reports</a>
                     <a href="{{ route('user.sales', $user->id) }}"
                         class="btn @if($tab_menu == 'sales') btn-success @else btn-dark @endif d-block mb-2 btn-sm"><i
                             class="fa fa-money" aria-hidden="true"></i> Sales</a>
