@@ -124,8 +124,13 @@ php artisan make:controller Backend/OrderController
 
 
 
+php artisan make:migration update_payment_and_receipt_note || php artisan migrate
 
+must be install for update migration table => composer require doctrine/dbal
 
+php artisan make:migration add_note_to_sales_and_purchase_table || if wont to rollback php artisan migrate::rollback
+
+php artisan make:controller CategoryController -r || -r = resource
 
 
 Sorce Code = https://github.com/AR-Shahin/Web-Development-With-Laravel_batch_2
@@ -153,6 +158,24 @@ https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#que
 
 
 */
+   # Group Routers
+// Route::prefix('order')->name('order.')->controller(OrderController::class)->group(function () {
 
+//     Route::get('/', 'index')->name('index');
+//     Route::get('/details/{order}', 'details')->name('details');
+//     Route::post('/status/{order}', 'status')->name('status');
+// });
 
+ //Route::resource('users', UsersController::class, ['except' => ['show'] ]); // except -> create route without show
+    //Route::resource('users', UsersController::class, ['only' => ['show', 'destroy'] ]); // only -> create route only show , destroy
 
+    /*
+    7 in 1 This Route::resource('users', UsersController::class); in blow
+    Route::get('users', [UsersController::class, 'index']);
+    Route::POST('users', [UsersController::class, 'store']);
+    Route::POST('users/create', [UsersController::class, 'create']);
+    Route::POST('users/{user}', [UsersController::class, 'show']);
+    Route::POST('users/{user}', [UsersController::class, 'update']);
+    Route::POST('users/{user}', [UsersController::class, 'destroy']);
+    Route::POST('users/{user}/edit', [UsersController::class, 'edit']);
+    */

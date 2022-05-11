@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 02:34 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: May 11, 2022 at 11:26 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -70,7 +69,9 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `title`, `created_at`, `updated_at`) VALUES
 (1, 'Mobils', NULL, '2022-05-03 23:32:10'),
 (2, 'Pc', NULL, NULL),
-(3, 'tabs', '2022-05-03 23:37:14', '2022-05-03 23:37:14');
+(3, 'tabs', '2022-05-03 23:37:14', '2022-05-03 23:37:14'),
+(4, 'Work', '2022-05-10 02:57:26', '2022-05-10 02:57:26'),
+(5, 'Other Products', '2022-05-10 19:33:51', '2022-05-10 19:33:51');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -147,7 +148,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2022_05_04_100253_add_admin', 2),
 (16, '2022_05_06_012739_update_payment_and_receipt_note', 3),
 (17, '2022_05_08_021840_add_note_to_sales_and_purchase_table', 4),
-(18, '2022_05_08_152507_add_invoice_id_on_payments_and_receipts', 5);
+(18, '2022_05_08_152507_add_invoice_id_on_payments_and_receipts', 5),
+(19, '2022_05_09_071053_add_has_stock_on_products_table', 6);
 
 -- --------------------------------------------------------
 
@@ -191,7 +193,9 @@ INSERT INTO `payments` (`id`, `admin_id`, `user_id`, `purchase_invoice_id`, `amo
 (7, 2, 2, NULL, 300, '2022-05-07', 'go to novo', '2022-05-07 19:09:36', '2022-05-07 19:09:36'),
 (8, 2, 1, NULL, 500, '2022-05-07', NULL, '2022-05-07 19:11:12', '2022-05-07 19:11:12'),
 (9, 2, 3, NULL, 90, '2022-05-08', NULL, '2022-05-08 17:53:11', '2022-05-08 17:53:11'),
-(10, 2, 3, NULL, 55, '2022-05-08', NULL, '2022-05-08 18:32:00', '2022-05-08 18:32:00');
+(10, 2, 3, NULL, 55, '2022-05-08', NULL, '2022-05-08 18:32:00', '2022-05-08 18:32:00'),
+(11, 2, 3, NULL, 500, '2022-05-07', NULL, '2022-05-08 20:20:08', '2022-05-08 20:20:08'),
+(12, 2, 3, 1, 100, '2022-05-09', 'as', '2022-05-08 21:53:10', '2022-05-08 21:53:10');
 
 -- --------------------------------------------------------
 
@@ -205,7 +209,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8_unicode_ci,
+  `abilities` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -221,9 +225,10 @@ CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `category_id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci,
+  `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `cost_price` double DEFAULT NULL,
   `price` double DEFAULT NULL,
+  `has_stock` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -232,10 +237,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `title`, `description`, `cost_price`, `price`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Product 1', 'Description 1', 500, 520, NULL, NULL),
-(2, 1, 'Product 2', 'Description 2', 89, 100, NULL, NULL),
-(4, 3, 'Head Phone', 'Assalamu alaikum mamun boss & brother, your project absolutely awesome . I am learning laravel 7 through your video. Please video series same project Codeigniter MVC. Many many thanks', 3400, 3500, '2022-05-04 00:49:59', '2022-05-04 00:52:47');
+INSERT INTO `products` (`id`, `category_id`, `title`, `description`, `cost_price`, `price`, `has_stock`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Product 1', 'Description 1', 500, 520, 1, NULL, NULL),
+(2, 1, 'Product 2', 'Description 2', 89, 100, 0, NULL, '2022-05-10 19:33:08'),
+(4, 3, 'Head Phone', 'Assalamu alaikum mamun boss & brother, your project absolutely awesome . I am learning laravel 7 through your video. Please video series same project Codeigniter MVC. Many many thanks', 3400, 3500, 1, '2022-05-04 00:49:59', '2022-05-04 00:52:47'),
+(5, 4, 'Employee Salary', 'Employee Salary', NULL, NULL, 1, '2022-05-10 02:58:14', '2022-05-10 02:58:14'),
+(6, 4, 'Fan', 'Need a sling fan', 3200, 333, 1, '2022-05-10 19:29:18', '2022-05-10 19:29:18'),
+(7, 5, 'Moshari', 'Moshari', 120, 150, 1, '2022-05-10 19:34:41', '2022-05-10 19:34:41');
 
 -- --------------------------------------------------------
 
@@ -249,7 +257,7 @@ CREATE TABLE `purchase_invoices` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `challan_no` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` date NOT NULL,
-  `note` text COLLATE utf8_unicode_ci,
+  `note` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -260,7 +268,8 @@ CREATE TABLE `purchase_invoices` (
 
 INSERT INTO `purchase_invoices` (`id`, `admin_id`, `user_id`, `challan_no`, `date`, `note`, `created_at`, `updated_at`) VALUES
 (1, 2, 3, '0.9531805', '2022-05-09', 'purchase test', '2022-05-08 18:07:11', '2022-05-08 18:07:11'),
-(2, 2, 3, '134', '2022-05-08', 'test', '2022-05-08 18:13:20', '2022-05-08 18:13:20');
+(2, 2, 3, '134', '2022-05-08', 'test', '2022-05-08 18:13:20', '2022-05-08 18:13:20'),
+(3, 1, 2, '142', '2022-05-10', NULL, '2022-05-10 03:07:47', '2022-05-10 03:07:47');
 
 -- --------------------------------------------------------
 
@@ -284,7 +293,10 @@ CREATE TABLE `purchase_items` (
 --
 
 INSERT INTO `purchase_items` (`id`, `product_id`, `purchase_invoice_id`, `quantity`, `price`, `total`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 2, 56, 112, '2022-05-08 18:30:19', '2022-05-08 18:30:19');
+(1, 1, 2, 2, 56, 112, '2022-05-08 18:30:19', '2022-05-08 18:30:19'),
+(2, 1, 1, 1, 333, 333, '2022-05-08 20:18:57', '2022-05-08 20:18:57'),
+(4, 4, 1, 2, 124, 248, '2022-05-08 20:19:35', '2022-05-08 20:19:35'),
+(5, 5, 3, 1, 5500, 5500, '2022-05-10 03:08:17', '2022-05-10 03:08:17');
 
 -- --------------------------------------------------------
 
@@ -331,7 +343,7 @@ CREATE TABLE `sale_invoices` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `challan_no` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` date NOT NULL,
-  `note` text COLLATE utf8_unicode_ci,
+  `note` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -520,7 +532,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -538,13 +550,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -556,19 +568,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `purchase_invoices`
 --
 ALTER TABLE `purchase_invoices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `purchase_items`
 --
 ALTER TABLE `purchase_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `receipts`

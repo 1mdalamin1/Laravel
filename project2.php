@@ -2,7 +2,7 @@
 /*
 https://www.artofcse.com/learning/project-analysis-and-database-design
 
-2:18s/52:39s => video No:- 52 Laravel Project (Adding Single User Report)
+2:18s/52:39s => video No:- 53 Laravel Project (Add Users filter option and show balance)
 2:18s/52:39s => https://www.youtube.com/watch?v=Ve1PjOvXTIM&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=35
 Database design  | => https://drawsql.app/vir-za/diagrams/project2#
 Source Code Link  | => https://github.com/almamuncsit/mini_pos
@@ -128,104 +128,6 @@ php artisan breeze:install
 
 php artisan make:request AdminAuthRequest
 
-##########  Class 37 | Project | Category CRUD with Axios #########
-
-php artisan make:model Category -m || => https://drawsql.app/vir-za/diagrams/project
-php artisan make:controller Admin/CategoryController -r
-php artisan make:model SubCategory -m
-
-
-php artisan migrate
-
-php artisan make:request CategoryRequest
-php artisan make:request CategoryUpdateRequest
-
-======================need CRUD Color & Size later now use create seeder=================== 
-
-Real Project must be use fileable not guarded | cause fileable succerut more then guarded
-
-php artisan make:model Color -ms
-php artisan make:model Size -ms
-php artisan make:controller Admin/SizeController 
-
-php artisan migrate:fresh --seed
-
-php artisan make:model Product -mf
-php artisan make:controller Admin/ProductController  
-
-
-
-
-php artisan make:seeder CategorySeeder
-php artisan make:seeder SubCategorySeeder
-
-
-php artisan migrate:fresh --seed
-
-php artisan make:model ProductSlider -m
-php artisan storage:link
-
-php artisan route:list
-
-php artisan make:factory ProductFactory
-php artisan migrate:fresh --seed
-
-php artisan make:model Customer -m
-php artisan make:controller Frontend/CustomerController
-php artisan make:controller Frontend/CartController
-php artisan make:controller Frontend/ProductController
-php artisan make:controller Frontend/HomeController
-php artisan make:controller Frontend/OrderController
-
-php artisan migrate
-php artisan optimize
-
-php artisan make:request CustomerLoginRequest
-php artisan make:model Cart -m
-php artisan make:controller Frontend/CartController
-php artisan migrate
-
-#### Product Order ####
-
-php artisan make:model Shipping -m
-php artisan make:model Payment -m
-php artisan make:model Order -m
-php artisan make:model OrderDetails -m
-php artisan migrate
-php artisan make:controller Frontend/OrderController
-php artisan make:middleware PreventEmptyOrder
-
-
-php artisan make:controller Backend/OrderController
-
-
-
-
-
-
-
-Sorce Code = https://github.com/AR-Shahin/Web-Development-With-Laravel_batch_2
-
-
-
-
-
-
-testimonial-custom {
-    transform: skew(-20deg,0deg);
-}
-.testimonial-custom {
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-php artisan optimize:clear
-php artisan route:clear
-php artisan config:clear
-php artisan cache:clear
-
-https://www.freepik.com/premium-vector/simple-id-card-design_2623288.htm#query=school%20id%20card%20simple&position=25&from_view=search
-
-https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#query=school%20id%20card%20simple&position=22&from_view=search
 
 
 */
