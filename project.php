@@ -1,35 +1,27 @@
 <?php 
-/*
-https://www.artofcse.com/learning/project-analysis-and-database-design
-
-13:47s/51:24s => https://www.youtube.com/watch?v=VqrDeV-Hu1Y&list=PLjZmR8YqVGMfc--70MPn_MyI2uPW5mFrn&index=15
-
-Database design  | => https://drawsql.app/home
-
+/*|
+|||||| This may be last project only laravel :) 
+|
 |--------------------------------------------------------------------------
-|You Can user project_login_logout.zip with Breeze ---> https://github.com/1mdalamin1/Laravel/tree/project
+13:47s/51:24s => https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+
+| Project Planning | Database design  | => https://drawsql.app/home
+
+| Sorce Code = https://github.com/raselupm/civanoglu
+
 |--------------------------------------------------------------------------
 |
-|||||| This may be last project only laravel :) https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+|||||| This may be last project only laravel :) 
 
-i wont to use laravel only backend api & frontend vue.js|react.js 
+i wont to use laravel only backend api & frontend vue.js(nuxt.js)|react.js 
 
 */
 
 /*
-php artisan optimize | for remove cash
-
-https://www.facebook.com/aristrocratbuffetlounge/
-
-24:43s/29:48s => https://www.youtube.com/watch?v=_SolfIYN0a0&list=PLnhrpn1DBwx6MadqSAvKIae1nx0PC-kiH&index=37
-
-php artisan = pa
-
-36 | Project Planning | => https://drawsql.app/vir-za/diagrams/project#
 ___________________________________________________________
-composer create-project laravel/laravel:^8.0 project
+composer create-project laravel/laravel:^8.0 civanoglu
  
-cd project
+cd civanoglu
  
 php artisan serve
 php artisan make:model Admin -m
@@ -147,6 +139,7 @@ testimonial-custom {
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+php artisan optimize | for remove cash
 php artisan optimize:clear
 php artisan route:clear
 php artisan config:clear
