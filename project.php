@@ -3,7 +3,7 @@
 |||||| This may be last project only laravel :) 
 |
 |--------------------------------------------------------------------------
-13:47s/51:24s => https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+6:30s/25:45s => https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=2
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -24,10 +24,6 @@ composer create-project laravel/laravel:^8.0 civanoglu
 cd civanoglu
  
 php artisan serve
-php artisan make:model Admin -m
-
-php artisan migrate
-php artisan migrate:fresh --seed
 composer require laravel/breeze --dev => https://laravel.com/docs/8.x/starter-kits
 php artisan breeze:install
 
@@ -41,6 +37,11 @@ php artisan breeze:install
 
 php artisan make:request AdminAuthRequest
 
+
+php artisan make:model Admin -m
+
+php artisan migrate
+php artisan migrate:fresh --seed
 ##########  Class 37 | Project | Category CRUD with Axios #########
 
 php artisan make:model Category -m || => https://drawsql.app/vir-za/diagrams/project
