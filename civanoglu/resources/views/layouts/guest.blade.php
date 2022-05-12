@@ -18,7 +18,9 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
+            @include('components.header')
             {{ $slot }}
+            @include('components.footer')
         </div>
     </body>
 </html>

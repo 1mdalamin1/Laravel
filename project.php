@@ -1,9 +1,11 @@
 <?php 
 /*|
+create database name civanoglu & connate .env file and run |=> php artisan migrate
+php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :) 
 |
 |--------------------------------------------------------------------------
-6:30s/25:45s => https://www.youtube.com/watch?v=HaHV1_wrjhs&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=2
+0:05s/24:28s => https://www.youtube.com/watch?v=1wVU3wylx-0&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -35,9 +37,35 @@ php artisan breeze:install
     php artisan migrate
 )}]
 
+ |=> https://emojipedia.org/flags/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 php artisan make:request AdminAuthRequest
-
-
 php artisan make:model Admin -m
 
 php artisan migrate
