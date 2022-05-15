@@ -1,11 +1,15 @@
 <?php 
+
+# php artisan serve && npm run watch|| npm run dev |=> run commend
+
 /*|
 create database name civanoglu & connate .env file and run |=> php artisan migrate
 php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :) 
 |
-|--------------------------------------------------------------------------
-0:05s/24:28s => https://www.youtube.com/watch?v=1wVU3wylx-0&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+
+|--------Laravel private course - property listing - Part #3 -----------------------
+05:01s/13:21s => https://www.youtube.com/watch?v=1wVU3wylx-0&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
 
 | Project Planning | Database design  | => https://drawsql.app/home
 

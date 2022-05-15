@@ -7,11 +7,18 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Studio Sans DEMO', ...defaultTheme.fontFamily.sans],
             },
+        },
+    },
+
+    variants: {
+        extend: {
+            opacity: ['disabled'],
         },
     },
 
