@@ -1,15 +1,20 @@
 require('./bootstrap');
 
+// import feather from 'feather-icons/dist/feather.min'
+
+feather.replace();
+
 import Alpine from 'alpinejs';
-// import jQuery from './jquery-3.6.0.slim.min';
 
 window.Alpine = Alpine;
 
 Alpine.start();
+
+
 window.$ = window.jQuery = require('jquery');
 
 require('./slick-1.8.1.min');
-// require('./lity.min');
+require('./lity.min');
 
 jQuery(window).scroll(function() {
     const scroll = jQuery(window).scrollTop();
@@ -21,6 +26,48 @@ jQuery(window).scroll(function() {
     }
 });
 
-jQuery(document).ready(function($) {
-    $('.slider-test').slick();
+jQuery(document).ready(function ($) {
+    $('.gallery-slider').slick({
+        asNavFor: '.thumbnail-slider',
+        //centerMode: true,
+        prevArrow: '<div class="left-icon"><img src="/img/chevron-left.svg"/></div>',
+        nextArrow: '<div class="right-icon"><img src="/img/chevron-right.svg"/></div>',
+        dots: false
+    });
+    $('.thumbnail-slider').slick({
+        slidesToShow: 7,
+        asNavFor: '.gallery-slider',
+        centerMode: true,
+        focusOnSelect: true,
+        prevArrow: '<div class="left-icon"><img src="/img/chevron-left.svg"/></div>',
+        nextArrow: '<div class="right-icon"><img src="/img/chevron-right.svg"/></div>',
+        dots: false,
+        responsive: [
+            // {
+            //     breakpoint: 1024,
+            //     settings: {
+            //         slidesToShow: 3,
+            //         slidesToScroll: 3,
+            //         infinite: true,
+            //         dots: true
+            //     }
+            // },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
+    });
+
+    $(".civanoglu-menu, .civanoglu-menu-items a").on("click", function () {
+        $(".civanoglu-menu-items").toggleClass('active');
+    });
 });

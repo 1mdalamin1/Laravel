@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :) 
 |
 
-|--------Laravel private course - property listing - Part #6 -----------------------
-16:14s/19:06s => https://www.youtube.com/watch?v=ir5zW36KDz4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=7
+|--------Laravel private course - property listing - Part #7 -----------------------
+01:38s/15:17s => https://www.youtube.com/watch?v=ir5zW36KDz4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=7
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -42,10 +42,12 @@ php artisan breeze:install
 )}]
 
  |=> https://emojipedia.org/flags/
- |=> https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js
+Slick Slider |=> https://kenwheeler.github.io/slick/
+npm install --save jquery |=> https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js
 
 
 php artisan make:model Property -mc
+php artisan make:model Media -mc
 php artisan migrate:fresh
 php artisan make:controller HomeController -r
 
