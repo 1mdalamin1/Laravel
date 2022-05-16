@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :) 
 |
 
-|--------Laravel private course - property listing - Part #3 -----------------------
-05:01s/13:21s => https://www.youtube.com/watch?v=1wVU3wylx-0&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=3
+|--------Laravel private course - property listing - Part #6 -----------------------
+16:14s/19:06s => https://www.youtube.com/watch?v=ir5zW36KDz4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=7
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -42,9 +42,14 @@ php artisan breeze:install
 )}]
 
  |=> https://emojipedia.org/flags/
+ |=> https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js
 
 
+php artisan make:model Property -mc
+php artisan migrate:fresh
+php artisan make:controller HomeController -r
 
+npm install --save jquery
 
 
 
@@ -94,7 +99,6 @@ Real Project must be use fileable not guarded | cause fileable succerut more the
 php artisan make:model Color -ms
 php artisan make:model Size -ms
 php artisan make:controller Admin/SizeController 
-php artisan make:controller Admin/ColorController 
 
 php artisan migrate:fresh --seed
 
@@ -204,4 +208,8 @@ https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#que
     Route::POST('users/{user}', [UsersController::class, 'update']);
     Route::POST('users/{user}', [UsersController::class, 'destroy']);
     Route::POST('users/{user}/edit', [UsersController::class, 'edit']);
+
+
+
+    [contact-form-7 id="8" title="Contact form 1"]
     */

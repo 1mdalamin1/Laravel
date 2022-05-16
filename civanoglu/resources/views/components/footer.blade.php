@@ -7,7 +7,7 @@
                 <div class="bg-wite rounded-xl flex">
                     <div class="bg-gray-500 w-24"></div>
                     <div class="p-4">
-                        <h3 class="mb-4 text-xl">Lorem ipsum dolor sit amet </h3>
+                        <h3 class="mb-4 text-xl">Lorem ipsum dolor sit amet  sit amet</h3>
                         <a href="#" class="fullwidth-btn">ReadMore</a>
                     </div>
                 </div>
@@ -52,6 +52,43 @@
 
         </div>
     </div>
+
+    <div class="flex pb-12">
+        <div class="w-1/4 pr-6">
+            <img width="100" src="/img/vir.png" alt="">
+            <p class="mt-6">saverBoys&GirlsSchool</p>
+        </div>
+        <div class="w-3/4 font-bold leading-8">
+            <div class="flex -mx-6">
+                <div class="flex-1 px-6">
+                    <ul>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                    </ul>
+                </div>
+                <div class="flex-1 px-6">
+                    <ul>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                    </ul>
+                </div>
+                <div class="flex-1 px-6">
+                    <ul>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                        <li><a href="">@2022 | vir-za.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div>
         <p class="text-center">copy right@2022 | vir-za.com</p>
     </div>
