@@ -1,15 +1,15 @@
-<?php 
+<?php
 
 # php artisan serve && npm run watch|| npm run dev |=> run commend
 
 /*|
 create database name civanoglu & connate .env file and run |=> php artisan migrate
 php artisan serve && npm run watch|| npm run dev |=> run commend
-|||||| This may be last project only laravel :) 
+|||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #7 -----------------------
-01:38s/15:17s => https://www.youtube.com/watch?v=ir5zW36KDz4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=7
+|--------Laravel private course - property listing - Part #10 -----------------------
+01:23s/19:32s => https://www.youtube.com/watch?v=_i2aj3jnpqc&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=11
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -17,25 +17,25 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 
 |--------------------------------------------------------------------------
 |
-|||||| This may be last project only laravel :) 
+|||||| This may be last project only laravel :)
 
-i wont to use laravel only backend api & frontend vue.js(nuxt.js)|react.js 
+i wont to use laravel only backend api & frontend vue.js(nuxt.js)|react.js
 
 */
 
 /*
 ___________________________________________________________
 composer create-project laravel/laravel:^8.0 civanoglu
- 
+
 cd civanoglu
- 
+
 php artisan serve
 composer require laravel/breeze --dev => https://laravel.com/docs/8.x/starter-kits
 php artisan breeze:install
 
 [{(
     php artisan breeze:install
-    
+
     npm install
     npm run dev
     php artisan migrate
@@ -53,8 +53,12 @@ php artisan make:controller HomeController -r
 
 npm install --save jquery
 
+php artisan make:model Location -mc
 
-
+php artisan make:factory PropertyFactory
+php artisan make:factory MediaFactory
+php artisan make:factory LocationFactory
+php artisan migrate:fresh --seed
 
 
 
@@ -94,18 +98,18 @@ php artisan migrate
 php artisan make:request CategoryRequest
 php artisan make:request CategoryUpdateRequest
 
-======================need CRUD Color & Size later now use create seeder=================== 
+======================need CRUD Color & Size later now use create seeder===================
 
 Real Project must be use fileable not guarded | cause fileable succerut more then guarded
 
 php artisan make:model Color -ms
 php artisan make:model Size -ms
-php artisan make:controller Admin/SizeController 
+php artisan make:controller Admin/SizeController
 
 php artisan migrate:fresh --seed
 
 php artisan make:model Product -mf
-php artisan make:controller Admin/ProductController  
+php artisan make:controller Admin/ProductController
 
 
 
@@ -214,4 +218,11 @@ https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#que
 
 
     [contact-form-7 id="8" title="Contact form 1"]
+
+
+
+
+/wp-content/uploads/2022/05/facebook.png
+
+
     */

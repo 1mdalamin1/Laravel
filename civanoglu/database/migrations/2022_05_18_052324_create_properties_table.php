@@ -42,8 +42,8 @@ class CreatePropertiesTable extends Migration
 
             $table->timestamps();
 
-            //$table->foreign('featured_media_id')->references('id')->on('media');
-            // $table->foreign('location_id')->references('id')->on('locations');
+            // $table->foreign('featured_media_id')->references('id')->on('media');
+            $table->foreign('location_id')->references('id')->on('locations');
         });
     }
 

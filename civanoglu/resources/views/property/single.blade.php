@@ -14,7 +14,10 @@
     <div class="bg-white py-8">
         <div class="container mx-auto">
             <h2 class="text-3xl text-gray-600">{{$property->name}}</h2>
-            <h3 class="text-lg mt-2">Price: <span class="text-red-800">{{$property->dynamic_pricing($property->price)}}</span></h3>
+            <h3 class="text-lg mt-2">Price: <span class="text-red-800">
+                {{-- {{$property->dynamic_pricing($property->price)}} --}}
+                {{ number_format($property->price, 2, ',', ',' ) }} $
+            </span></h3>
         </div>
     </div>
 
@@ -31,9 +34,9 @@
                         @endforeach
                     </div>
 
-                    <div class="thumbnail-slider">
+                    <div class="thumbnail-slider flex">
                         @foreach($property->gallery as $gallery)
-                        <div class="single-thumbnail-item">
+                        <div class="single-thumbnail-item w-24">
                             <div style="background-image: url({{$gallery->name}})" class="bg-cover bg-center h-full w-full"></div>
                         </div>
                         @endforeach
@@ -70,7 +73,9 @@
                                 <li class="flex text-sm">
                                     <div class="flex"><span
                                             class="text-sm">Bedrooms:</span></div>
-                                    <span class="ml-2 font-bold">{{$property->bedrooms}}</span>
+                                    <span class="ml-2 font-bold">
+                                        {{$property->bedrooms}}
+                                    </span>
                                 </li>
                             </ul>
                         </div>
@@ -145,7 +150,7 @@
                     @if(Session::get('message'))
                     <p class="mb-6 p-3 bg-green-100 text-green-700">{{Session::get('message')}}</p>
                     @endif
-
+{{--
                     <form action="{{route('property-inquiry', $property->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
@@ -191,7 +196,7 @@
                                 Details</button>
                         </div>
 
-                    </form>
+                    </form> --}}
                 </div>
             </div>
 
