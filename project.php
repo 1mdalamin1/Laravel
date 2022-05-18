@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #10 -----------------------
-01:23s/19:32s => https://www.youtube.com/watch?v=_i2aj3jnpqc&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=11
+|--------Laravel private course - property listing - Part #13 -----------------------
+01:01s/11:41s => https://www.youtube.com/watch?v=p4nUm5dU4R4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=15
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -58,11 +58,11 @@ php artisan make:model Location -mc
 php artisan make:factory PropertyFactory
 php artisan make:factory MediaFactory
 php artisan make:factory LocationFactory
+php artisan make:model Page -mc
+
+
+
 php artisan migrate:fresh --seed
-
-
-
-
 
 
 

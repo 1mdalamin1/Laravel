@@ -35,12 +35,18 @@
             {{-- Left Content --}}
             <div class="md:w-9/12">
                 <div class="flex flex-wrap -mx-3">
-                    @foreach($latest_properties as $property)
+                    {{-- @foreach($latest_properties as $property)
                         @include('components.single-property-card', ['property' => $property, 'width' => 'w-full md:w-1/3'])
-                    @endforeach
+                    @endforeach --}}
+
+                @foreach($properties as $property)
+                @include('components.single-property-card', ['property'=> $property])
+
+                @endforeach
                 </div>
 
-                {{$latest_properties->links()}}
+                {{-- {{$latest_properties->links()}} --}}
+                {{$properties->links()}}
 
             </div>{{-- Left Content End --}}
 

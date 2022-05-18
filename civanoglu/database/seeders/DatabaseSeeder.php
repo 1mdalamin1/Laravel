@@ -18,17 +18,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        // $page = new Page();
-        // $page->name = 'Contact Us';
-        // $page->slug = 'contact-us';
-        // $page->content = 'lorem';
-        // $page->save();
+        $page = new Page();
+        $page->name = 'Contact Us';
+        $page->slug = 'contact-us';
+        $page->content = 'lorem';
+        $page->save();
 
-        // $page = new Page();
-        // $page->name = 'About Us';
-        // $page->slug = 'about-us';
-        // $page->content = 'lorem';
-        // $page->save();
+        $page = new Page();
+        $page->name = 'About Us';
+        $page->slug = 'about-us';
+        $page->content = 'lorem';
+        $page->save();
 
         $user = new User();
         $user->name = 'Rasel Ahmed';
