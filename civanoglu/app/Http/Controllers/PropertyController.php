@@ -31,6 +31,8 @@ class PropertyController extends Controller
     public function index(Request $request)
     {
 
+        $locations = Location::select(['id', 'name'])->get();
+
         if(!empty($request->type)) {
             $properties = Property::latest()->where('type', $request->type)->paginate(9);
         }
@@ -38,7 +40,10 @@ class PropertyController extends Controller
             $properties = Property::latest()->paginate(12);
         }
 
-        return view('property.index', ['properties' => $properties]);
+        return view('property.index', [
+            'properties' => $properties,
+            'locations' => $locations
+        ]);
         // return view('admin.property.index', ['properties' => $properties]);
     }
 

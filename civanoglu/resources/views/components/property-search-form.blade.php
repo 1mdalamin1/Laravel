@@ -10,7 +10,7 @@
         </div>
 
         <div class="py-3 self-center border-gray-500 border hidden md:block"></div>
-        {{-- <div class="flex flex-col md:mx-3">
+        <div class="flex flex-col md:mx-3">
             <label for="location">Location</label>
             <select id="location" name="location" class="border-gray-400 mb-3 md:mb-0 md:border-0 focus:ring-0">
                 <option value="">Location</option>
@@ -18,7 +18,7 @@
                     <option {{request('location') == $location->id ? 'selected="selected"' : ''}} value="{{$location->id}}">{{$location->name}}</option>
                 @endforeach
             </select>
-        </div> --}}
+        </div>
 
         <div class="py-3 self-center border-gray-500 border hidden md:block"></div>
         <div class="flex flex-col md:mx-3">
@@ -57,7 +57,8 @@
         </div>
     </div>
     <div class="flex justify-between items-center md:w-3/12">
-        <input name="property_name" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
+        <input name="query" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
+        {{-- <input name="property_name" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0"> --}}
         <button type="submit" class="btn">Search</button>
     </div>
 </form>

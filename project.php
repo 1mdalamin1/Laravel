@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #13 -----------------------
-01:01s/11:41s => https://www.youtube.com/watch?v=p4nUm5dU4R4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=15
+|--------Laravel private course - property listing - Part #14 -----------------------
+08:20s/11:41s => https://www.youtube.com/watch?v=p4nUm5dU4R4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=15
 
 | Project Planning | Database design  | => https://drawsql.app/home
 

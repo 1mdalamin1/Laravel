@@ -13,7 +13,7 @@
 
                 <h2 class="font-bold text-4xl mb-6">Lorem ipsum dolor sit amet, consectetur<br/> adipisicing elit. A aut autem dolorum <span class="underline">quis vitae!</span></h2>
                 <div class="rounded-lg bg-white p-4 relative z-20 shadow-lg">
-                    @include('components.property-search-form')
+                    @include('components.property-search-form', ['locations' => $locations])
                 </div>
 
             </div>

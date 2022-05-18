@@ -54,7 +54,7 @@
 
             {{-- Sidebar --}}
             <div class="md:w-3/12 md:ml-6 mt-10 md:mt-0 vertical-search-form">
-                @include('components.property-search-form')
+                @include('components.property-search-form', ['locations' => $locations])
             </div>
 
 
