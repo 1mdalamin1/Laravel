@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #14 -----------------------
-08:20s/11:41s => https://www.youtube.com/watch?v=p4nUm5dU4R4&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=15
+|--------Laravel private course - property listing - Part #17 -----------------------
+00:01s/11:31s => https://www.youtube.com/watch?v=iMuSVSQDHVM&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=18
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -59,12 +59,15 @@ php artisan make:factory PropertyFactory
 php artisan make:factory MediaFactory
 php artisan make:factory LocationFactory
 php artisan make:model Page -mc
+php artisan make:model Contact -mc
 
 
 
 php artisan migrate:fresh --seed
 
-
+## Send mail from Laravel to user
+-> .env file config then 
+php artisan make:mail ContactMail 
 
 
 

@@ -15,6 +15,7 @@
         </ul>
     </div>
     <div class="min-w-max tex-3xl">
+        <a href="#">🇺🇸</a>
         <a href="#">🏳️‍🌈</a>
         <a href="#">🏴‍☠️</a>
     </div>

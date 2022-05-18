@@ -57,8 +57,9 @@
         </div>
     </div>
     <div class="flex justify-between items-center md:w-3/12">
-        <input name="query" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
-        {{-- <input name="property_name" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0"> --}}
+
+        <input name="property_name" value="{{request('property_name')}}" type="search" placeholder="Try to search for something" class="rounded-lg px-4 py-2 w-full mr-4 focus:border-gray-700 focus:ring-0">
+
         <button type="submit" class="btn">Search</button>
     </div>
 </form>
