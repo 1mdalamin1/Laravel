@@ -1,4 +1,4 @@
-<h4>Hello,<b> {{$contact->name}} !</b></h4>
+<h4>Hello,<strong style="color: green; font-size: 24px;"> {{$contact->name}} !</strong></h4>
 
 <p>We have received your message. This is what you sent.</p>
 
@@ -10,5 +10,5 @@
 </p>
 
 
-<p>We will reply you soon. In the meanwhile you can call us following number.</p>
+<p><strong style="color: green;">We will reply you soon.</strong> In the meanwhile you can call us following number.</p>
 <h2><img src="" alt="" srcset=""></h2>

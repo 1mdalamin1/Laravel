@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PropertyController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,25 @@ use App\Http\Controllers\PropertyController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// routes/web.php
+// LaravelLocalization
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/property/{id}', [PropertyController::class, 'single'])->name('single-property');
-Route::get('/properties}', [PropertyController::class, 'index'])->name('properties');
-Route::get('/page/{slug}', [PageController::class, 'single'])->name('page');
-Route::post('/property-inquiry/{id}', [ContactController::class, 'propertyInquiry'])->name('property-inquiry');
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+
+    Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/property/{id}', [PropertyController::class, 'single'])->name('single-property');
+    Route::get('/properties}', [PropertyController::class, 'index'])->name('properties');
+    Route::get('/page/{slug}', [PageController::class, 'single'])->name('page');
+    Route::post('/property-inquiry/{id}', [ContactController::class, 'propertyInquiry'])->name('property-inquiry');
+
+});
+
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

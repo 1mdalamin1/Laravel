@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0e217664e4565c204035badea5b588cb38766999',
+        'reference' => '9913ee54afba123899484e9c2d5932a18027a6bc',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -409,7 +409,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0e217664e4565c204035badea5b588cb38766999',
+            'reference' => '9913ee54afba123899484e9c2d5932a18027a6bc',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -482,6 +482,15 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
+            'dev_requirement' => false,
+        ),
+        'mcamara/laravel-localization' => array(
+            'pretty_version' => 'v1.7.0',
+            'version' => '1.7.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mcamara/laravel-localization',
+            'aliases' => array(),
+            'reference' => '27565315c585e90d8d93aa06afd49d6a5992fe5a',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(

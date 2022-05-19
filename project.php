@@ -8,8 +8,8 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #17 -----------------------
-00:01s/11:31s => https://www.youtube.com/watch?v=iMuSVSQDHVM&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=18
+|--------Laravel private course - property listing - Part #18 -----------------------
+00:23s/17:12s => https://www.youtube.com/watch?v=miNNHLcglpA&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=19
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -71,6 +71,23 @@ php artisan make:mail ContactMail |-> set mail connect
 |-> views/emails/contact-mail.blade.php for mail body create must be use html table
 |-> ContactController.php to control mail
 
+## Send mail from Laravel to user via Queue
+
+php artisan queue:table
+php artisan migrate
+go to .env |-> QUEUE_CONNECTION=database
+php artisan make:job ProcessContactMail
+php artisan queue:listen => must be run  if not run this|| php artisan queue:work 
+
+
+composer require mcamara/laravel-localization |=> https://github.com/mcamara/laravel-localization
+php artisan vendor:publish --provider="Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider" |=> 
+bn, tr, en |=> After that, config/laravellocalization.php will be created.
+
+Go to |-> app/http/kernel.php 
+Go to |-> routes/web.php
+
+multiple languages || বিভিন্ন ভাষা |=> https://github.com/raselupm/civanoglu/blob/d0416ef9232b4c105765727d91651643e09076c1/resources/views/components/header.blade.php
 
 
 
@@ -85,7 +102,6 @@ php artisan make:mail ContactMail |-> set mail connect
 
 
 php artisan make:request AdminAuthRequest
-php artisan make:model Admin -m
 
 php artisan migrate
 php artisan migrate:fresh --seed

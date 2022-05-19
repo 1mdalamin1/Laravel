@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ProcessContactMail;
 use App\Models\Contact;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
@@ -23,12 +24,12 @@ class ContactController extends Controller
     $contact->name = $request->name;
     $contact->phone = $request->phone;
     $contact->email = $request->email;
-    $contact->message = $request->message . '\n <br> This message has been sent via ' . route('single-property', $property_id) . ' website.';
+    $contact->message = $request->message .PHP_EOL. ' \n This message has been sent via ' . route('single-property', $property_id) . ' website.';
     $contact->save();
 
     // send user & admin message via queue
-   # ProcessContactMail::dispatch($contact);
-    Mail::send(new ContactMail($contact));
+     ProcessContactMail::dispatch($contact);
+    // Mail::send(new ContactMail($contact));
 
 
     return redirect(route('single-property', $property_id))->with(['message' => 'Your message has been sent.']);
