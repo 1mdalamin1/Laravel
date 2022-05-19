@@ -3,13 +3,17 @@
 # php artisan serve && npm run watch|| npm run dev |=> run commend
 
 /*|
+
+rasel@website.com
+
+
 create database name civanoglu & connate .env file and run |=> php artisan migrate
 php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #18 -----------------------
-00:23s/17:12s => https://www.youtube.com/watch?v=miNNHLcglpA&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=19
+|--------Laravel private course - property listing - Part #19 -----------------------
+00:12s/19:14s => https://www.youtube.com/watch?v=ZdILi1H6uvw&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=20
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
@@ -60,6 +64,14 @@ php artisan make:factory MediaFactory
 php artisan make:factory LocationFactory
 php artisan make:model Page -mc
 php artisan make:model Contact -mc
+php artisan make:model Dashboard -mc
+
+
+
+
+
+
+
 
 
 
@@ -90,6 +102,7 @@ Go to |-> routes/web.php
 multiple languages || বিভিন্ন ভাষা |=> https://github.com/raselupm/civanoglu/blob/d0416ef9232b4c105765727d91651643e09076c1/resources/views/components/header.blade.php
 
 
+php artisan make:model DashboardController -mc
 
 
 

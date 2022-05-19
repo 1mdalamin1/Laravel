@@ -14,9 +14,18 @@
             <li><a href="{{route('page', 'contact-us')}}" class="p-4 inline-block text-white">{{__('Contact Us')}}</a></li>
         </ul>
     </div>
+
+    <div class="min-w-max mr-10 text-2xl">
+        <a class="inline-block mr-5 text-white" href="?currency=usd">$</a>
+        <a class="inline-block mr-5 text-white" href="?currency=lira">₺</a>
+        <a class="inline-block mr-5 text-white" href="?currency=tk">/=</a>
+    </div>
+
     <div class="min-w-max tex-3xl">
-        <a href="#">🇺🇸</a>
-        <a href="#">🏳️‍🌈</a>
-        <a href="#">🏴‍☠️</a>
+        <div class="flex">
+            <a href="{{ LaravelLocalization::getLocalizedURL('en') }}"><img width="30" class="p-1" src="/img/en.png" alt=""></a>
+            <a href="{{ LaravelLocalization::getLocalizedURL('bn') }}"><img width="30" class="p-1" src="/img/bn.png" alt=""></a>
+            <a href="{{ LaravelLocalization::getLocalizedURL('tr') }}"><img width="30" class="p-1" src="/img/tr.png" alt=""></a>
+        </div>
     </div>
 </div>

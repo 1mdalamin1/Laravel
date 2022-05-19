@@ -555,6 +555,7 @@ class ComposerStaticInit176bf1a74cf8b02e8c07a721494200ac
         'App\\Jobs\\ProcessContactMail' => __DIR__ . '/../..' . '/app/Jobs/ProcessContactMail.php',
         'App\\Mail\\ContactMail' => __DIR__ . '/../..' . '/app/Mail/ContactMail.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
+        'App\\Models\\Dashboard' => __DIR__ . '/../..' . '/app/Models/Dashboard.php',
         'App\\Models\\Location' => __DIR__ . '/../..' . '/app/Models/Location.php',
         'App\\Models\\Media' => __DIR__ . '/../..' . '/app/Models/Media.php',
         'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',

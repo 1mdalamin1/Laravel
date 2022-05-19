@@ -31,10 +31,10 @@ class DatabaseSeeder extends Seeder
         $page->save();
 
         $user = new User();
-        $user->name = 'Rasel Ahmed';
-        $user->email = 'rasel@website.com';
+        $user->name = 'Tanvir Md. Al-Amin';
+        $user->email = 'user@gmail.com';
         $user->email_verified_at = now();
-        $user->password = Hash::make('rasel@website.com');
+        $user->password = Hash::make('12345678');
         $user->remember_token = Str::random(10);
         $user->save();
 

@@ -36,6 +36,7 @@ return array(
     'App\\Jobs\\ProcessContactMail' => $baseDir . '/app/Jobs/ProcessContactMail.php',
     'App\\Mail\\ContactMail' => $baseDir . '/app/Mail/ContactMail.php',
     'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
+    'App\\Models\\Dashboard' => $baseDir . '/app/Models/Dashboard.php',
     'App\\Models\\Location' => $baseDir . '/app/Models/Location.php',
     'App\\Models\\Media' => $baseDir . '/app/Models/Media.php',
     'App\\Models\\Page' => $baseDir . '/app/Models/Page.php',

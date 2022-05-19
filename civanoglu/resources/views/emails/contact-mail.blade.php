@@ -11,4 +11,4 @@
 
 
 <p><strong style="color: green;">We will reply you soon.</strong> In the meanwhile you can call us following number.</p>
-<h2><img src="" alt="" srcset=""></h2>
+<h2><img width="120" src="/img/logo.png" alt=""></h2>
