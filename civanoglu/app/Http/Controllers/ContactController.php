@@ -23,7 +23,7 @@ class ContactController extends Controller
     $contact->name = $request->name;
     $contact->phone = $request->phone;
     $contact->email = $request->email;
-    $contact->message = $request->message . '\n This message has been sent via ' . route('single-property', $property_id) . ' website.';
+    $contact->message = $request->message . '\n <br> This message has been sent via ' . route('single-property', $property_id) . ' website.';
     $contact->save();
 
     // send user & admin message via queue

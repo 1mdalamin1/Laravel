@@ -66,9 +66,10 @@ php artisan make:model Contact -mc
 php artisan migrate:fresh --seed
 
 ## Send mail from Laravel to user
--> .env file config then 
-php artisan make:mail ContactMail 
-
+|-> .env file config then 
+php artisan make:mail ContactMail |-> set mail connect
+|-> views/emails/contact-mail.blade.php for mail body create must be use html table
+|-> ContactController.php to control mail
 
 
 
