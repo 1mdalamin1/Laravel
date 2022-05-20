@@ -4,7 +4,7 @@
 
 /*|
 
-rasel@website.com
+07:31s/11:33s --#24 => https://www.youtube.com/watch?v=Q-9ZWPd1kZY&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=25
 
 
 create database name civanoglu & connate .env file and run |=> php artisan migrate
@@ -103,6 +103,8 @@ multiple languages || বিভিন্ন ভাষা |=> https://github.com/
 
 
 php artisan make:model DashboardController -mc
+
+php artisan make:controller Admin/PageController --resource |=>  --resource = -r
 
 
 

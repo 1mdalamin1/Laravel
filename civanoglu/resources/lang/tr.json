@@ -1,3 +1,10 @@
 {
-    "Villa": "TRVilla"
+    "Villa": "TRVilla",
+    "Edit": "Düzenlemek",
+    "View": "görüş",
+    "Name": "İsim",
+    "Actions": "Hareketler",
+    "Add New Page": "Yeni Sayfa Ekle",
+    "Pages": "Sayfalar",
+    "Delete": "Silmek"
 }

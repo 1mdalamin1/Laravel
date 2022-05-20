@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Location;
+use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,18 @@ class HomeController extends Controller
             'locations' => $locations,
         ]);
     }
+
+
+    public function singlePage($slug) {
+        $page = Page::where('slug', $slug)->first();
+
+        if (!empty($page)) {
+            return view('page', ['page' => $page]);
+        } else {
+            return abort('404');
+        }
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,69 +48,80 @@ class HomeController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function singleLocation($id) {
+        $location = Location::findOrFail($id);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function singleProperty($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        // dd($property);
+        return view('property.single', [
+            'property' => $property
+        ]);
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function propertyIndex(Request $request)
     {
-        //
+
+        $locations = Location::select(['id', 'name'])->get();
+        $properties = Property::latest();
+
+        if(!empty($request->sale)) {
+            $properties = $properties->where('sale', $request->sale);
+        }
+        if(!empty($request->type)) {
+            $properties = $properties->where('type', $request->type);
+        }
+        if(!empty($request->location)) {
+            $properties = $properties->where('location_id', $request->location);
+        }
+        if(!empty($request->price == '100000')) {
+            $properties = $properties->where('price', '>', 10000)->where('price', '<=', 100000);
+        }
+        if(!empty($request->price == '200000')) {
+            $properties = $properties->where('price', '>', 100000)->where('price', '<=', 200000);
+        }
+        if(!empty($request->price == '300000')) {
+            $properties = $properties->where('price', '>', 200000)->where('price', '<=', 300000);
+        }
+        if(!empty($request->price == '400000')) {
+            $properties = $properties->where('price', '>', 300000)->where('price', '<=', 400000);
+        }
+        if(!empty($request->price == '500000')) {
+            $properties = $properties->where('price', '>', 400000)->where('price', '<=', 500000);
+        }
+
+        if(!empty($request->bedrooms)) {
+            $properties = $properties->where('bedrooms', $request->bedrooms);
+        }
+
+        // if(!empty($request->type)) {
+        //     $properties = Property::latest()->where('type', $request->type)->paginate(9);
+        // }
+        // else {
+        //     $properties = Property::latest()->paginate(12);
+        // }
+        if(!empty($request->property_name)) {
+            $properties = $properties->where('name', 'LIKE', '%'. $request->property_name.'%');
+        }
+        $properties =  $properties->paginate(12);
+
+        return view('property.index', [
+            'properties' => $properties,
+            'locations' => $locations
+        ]);
+        // return view('admin.property.index', ['properties' => $properties]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

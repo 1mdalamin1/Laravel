@@ -23,12 +23,13 @@ class PropertyController extends Controller
         ]);
     }
 
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function propertyIndex(Request $request)
     {
 
         $locations = Location::select(['id', 'name'])->get();
