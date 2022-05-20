@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Tanvir Md. Al-Amin';
-        $user->email = 'user@gmail.com';
+        $user->email = 'admin@gmail.com';
         $user->email_verified_at = now();
         $user->password = Hash::make('12345678');
         $user->remember_token = Str::random(10);

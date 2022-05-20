@@ -12,14 +12,14 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #19 -----------------------
+|--------Laravel private course - property listing - Part #19 --#24--#26--#30--#31--#32--
 00:12s/19:14s => https://www.youtube.com/watch?v=ZdILi1H6uvw&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=20
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
 | Sorce Code = https://github.com/raselupm/civanoglu
 
-|--------------------------------------------------------------------------
+|-----------------------------------------------------------------
 |
 |||||| This may be last project only laravel :)
 
