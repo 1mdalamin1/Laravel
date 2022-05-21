@@ -1,6 +1,6 @@
 require('./bootstrap');
 
-// import feather from 'feather-icons/dist/feather.min'
+import feather from 'feather-icons/dist/feather.min';
 
 feather.replace();
 

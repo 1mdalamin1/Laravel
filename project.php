@@ -65,11 +65,6 @@ php artisan make:factory LocationFactory
 php artisan make:model Page -mc
 php artisan make:model Contact -mc
 php artisan make:model Dashboard -mc
-composer require php-flasher/flasher-laravel |=> https://php-flasher.io/docs/framework/laravel/
-
-
-
-
 
 
 
@@ -104,7 +99,30 @@ multiple languages || বিভিন্ন ভাষা |=> https://github.com/
 
 php artisan make:model DashboardController -mc
 
+
+ === Use Notification === https://php-flasher.io/
+composer require php-flasher/flasher-laravel |=> https://php-flasher.io/docs/framework/laravel/
+{
+    // $flasher->addSuccess('success message');
+    // $flasher->addError('error message');
+    // $flasher->addWarning('warning essage');
+    // $flasher->addInfo('info message');
+}
+
+ === Use Icon Packages === https://feathericons.com/
+npm install feather-icons --save |=> 
+
+ === Use Light Box Packages === https://sorgalla.com/lity/ || https://github.com/jsor/lity
+npm i lity |=> 
+
+
+
+
+
 php artisan make:controller Admin/PageController --resource |=>  --resource = -r
+
+
+
 
 
 

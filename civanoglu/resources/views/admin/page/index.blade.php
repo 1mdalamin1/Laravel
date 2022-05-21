@@ -6,7 +6,7 @@
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-page.create')}}" class="fullwidth-btn">{{ __('Add New Page') }}</a>
+                <a href="{{route('dashboard-page.create')}}" class="fullwidth-btn">{{ __('Add New Page') }} <i data-feather="file-plus"></i> </a>
             </div>
         </div>
 
