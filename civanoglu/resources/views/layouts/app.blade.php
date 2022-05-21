@@ -33,5 +33,7 @@
                 {{ $slot }}
             </main>
         </div>
+
+        @flasher_render
     </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Flasher\Prime\FlasherInterface;
 
 class PageController extends Controller
 {
@@ -32,7 +33,7 @@ class PageController extends Controller
     public function saveOrUpdate($page, $request) {
         $page->name = $request->name;
         $page->slug = $request->slug;
-        $page->content = $request->slug;
+        $page->content = $request->content;
 
         $page->save();
     }
@@ -111,16 +112,23 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * FlasherInterface
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id, FlasherInterface $flasher)
-    // {
-    //     $page = Page::findOrFail($id);
-    //     $page->delete();
+    public function destroy($id, FlasherInterface $flasher)
+    {
+        $page = Page::findOrFail($id);
+        $page->delete();
 
-    //     $flasher->addSuccess('Page has been deleted.');
+        $flasher->addError('Page has been deleted.');
 
-    //     return back();
-    // }
+        // $flasher->addSuccess('success message');
+        // $flasher->addError('error message');
+        // $flasher->addWarning('warning essage');
+        // $flasher->addInfo('info message');
+
+        return back();
+    }
 }

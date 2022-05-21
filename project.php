@@ -4,7 +4,7 @@
 
 /*|
 
-07:31s/11:33s --#24 => https://www.youtube.com/watch?v=Q-9ZWPd1kZY&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=25
+00:13s/05:19s --#31 => https://www.youtube.com/watch?v=ubiKiesns4E&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=31
 
 
 create database name civanoglu & connate .env file and run |=> php artisan migrate
@@ -12,7 +12,7 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #19 --#24--#26--#30--#31--#32--
+|--------Laravel private course - property listing - Part #19 ------#30--#31--#32--
 00:12s/19:14s => https://www.youtube.com/watch?v=ZdILi1H6uvw&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=20
 
 | Project Planning | Database design  | => https://drawsql.app/home
@@ -65,7 +65,7 @@ php artisan make:factory LocationFactory
 php artisan make:model Page -mc
 php artisan make:model Contact -mc
 php artisan make:model Dashboard -mc
-
+composer require php-flasher/flasher-laravel |=> https://php-flasher.io/docs/framework/laravel/
 
 
 

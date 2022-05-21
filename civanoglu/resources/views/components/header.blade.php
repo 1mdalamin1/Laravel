@@ -26,6 +26,7 @@
             <a href="{{ LaravelLocalization::getLocalizedURL('en') }}"><img width="30" class="p-1" src="/img/en.png" alt=""></a>
             <a href="{{ LaravelLocalization::getLocalizedURL('bn') }}"><img width="30" class="p-1" src="/img/bn.png" alt=""></a>
             <a href="{{ LaravelLocalization::getLocalizedURL('tr') }}"><img width="30" class="p-1" src="/img/tr.png" alt=""></a>
+            <a class="px-6 py-2 rounded text-white bg-green-500" href="{{route('login')}}" target="_blank">Login</a>
         </div>
     </div>
 </div>

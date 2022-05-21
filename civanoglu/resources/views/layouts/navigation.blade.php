@@ -27,7 +27,17 @@
                     <x-nav-link :href="route('dashboard-properties')" :active="request()->routeIs('dashboard-properties')">{{ __('Properties') }}</x-nav-link>
 
                     <div class="min-w-max items-center flex">
-                        <a class="px-6 py-2 rounded text-white bg-green-500" href="{{route('home')}}" target="_blank">FrontEnd Home</a>
+                        <a class="px-6 py-2 rounded text-white bg-green-500 mr-2" href="{{route('home')}}" target="_blank">FrontEnd Home</a>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a  class="px-6 py-3 cursor-pointer rounded text-white bg-red-500"  :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </a>
+                        </form>
                     </div>
 
                 </div>
