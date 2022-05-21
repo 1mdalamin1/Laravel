@@ -4,7 +4,7 @@
 
 /*|
 
-00:13s/05:19s --#31 => https://www.youtube.com/watch?v=ubiKiesns4E&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=31
+00:52s/08:47s --#30 => https://www.youtube.com/watch?v=xeHbptzpXSE&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=30
 
 
 create database name civanoglu & connate .env file and run |=> php artisan migrate
@@ -12,7 +12,7 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #19 ------#30--#31--#32--
+|--------Laravel private course - property listing - Part #19 ------#30--#32--#33--
 00:12s/19:14s => https://www.youtube.com/watch?v=ZdILi1H6uvw&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=20
 
 | Project Planning | Database design  | => https://drawsql.app/home
@@ -115,8 +115,8 @@ npm install feather-icons --save |=>
  === Use Light Box Packages === https://sorgalla.com/lity/ || https://github.com/jsor/lity
 npm i lity |=> 
 
-
-
+=== Use GitHub Actions === https://github.com/features/actions
+|=> https://github.com/marketplace
 
 
 php artisan make:controller Admin/PageController --resource |=>  --resource = -r
