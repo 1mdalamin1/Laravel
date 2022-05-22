@@ -2,16 +2,16 @@
     <div class="relative z-10 pt-52 pb-64 bg-center bg-cover" style="background-image:url(/img/bg1.jpg)">
         <div class="absolute h-full w-full bg-black opacity-30 top-0 left-0 z-10"  ></div>
         <div class="container relative z-20 text-center text-white text-2xl">
-            <h2 class="font-bold text-5xl">Tanvir Hasan<br> Web developer at Seopage1.net</h2>
+            <h2 class="font-bold text-3xl md:text-5xl">Tanvir Hasan<br> Web developer at Seopage1.net</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima odio corporis earum ad veniam fugiat, suscipit sint vitae ?</p>
         </div>
     </div>
     <div class="py-32 text-center">
         <!-- Search From Area -->
-        <div class="-mt-10">
+        <div class="-mt-20 md:-mt-10">
             <div class="container">
 
-                <div class="rounded-lg bg-white p-4 relative z-20 shadow-lg">
+                <div class="rounded-lg bg-white p-4 mx-4 md:mx-0 bg-white p-4 relative z-20 shadow-lg home-search">
                     @include('components.property-search-form', ['locations' => $locations])
                 </div>
 
@@ -119,10 +119,10 @@
         <!-- Last Added Objects -->
         <div class="container py-14">
             <h2 class="section-heading">Last added objusts</h2>
-            <div class="flex flex-wrap -mx-2 justify-between mt-10">
+            <div class="flex flex-wrap -mx-3 justify-between mt-10">
 
                 @foreach($latest_properties as $property)
-                @include('components.single-property-card', ['property'=> $property])
+                @include('components.single-property-card', ['property'=> $property, 'width' => 'md:w-1/4 w-full'])
 
                 @endforeach
 

@@ -33,7 +33,7 @@
                 <li class="px-2 py-1 bg-blue-50 rounded-md text-xs mx-1 shadow-sm">15000 ft<sup>2</sup></li>
             </ul>
             <a href="{{route('single-property', $property->id)}}" class="btn w-full text-center">More details</a>
-            {{-- <a href="#" class="btn w-full text-center">More details</a> --}}
+
         </div>
     </div>
 </div>
