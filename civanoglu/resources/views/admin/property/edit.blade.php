@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Mülkü düzenle
+                <i class="" data-feather="upload-cloud"></i> Edit | Update property
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-property.index')}}" class="fullwidth-btn">Geri</a>
+                <a href="{{route('dashboard-property.index')}}" class="fullwidth-btn"><i class="" data-feather="arrow-left"></i> Back</a>
             </div>
         </div>
     </x-slot>
@@ -15,7 +15,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
-                    <h3>Galeri resimleri</h3>
+                    <h3>Gallery pictures</h3>
 
                     <div class="flex flex-wrap mt-3">
                         @foreach($property->gallery as $gallery)
@@ -25,7 +25,7 @@
                                 </div>
 
                                 <form method="post" action="{{route('delete-media', $gallery->id)}}" onsubmit="return confirm('Resmi gerçekten silmek istiyor musunuz?');" class="absolute right-0 top-0"> @csrf
-                                    <button style="font-size: 8px" type="submit" class="text-white bg-red-600 px-3 py-1">Silmek</button>
+                                    <button style="font-size: 8px" type="submit" class="text-white bg-red-600 px-3 py-1">To delete</button>
                                 </form>
                             </div>
                         @endforeach
@@ -36,7 +36,7 @@
                 <form action="{{route('dashboard-property.update', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf @method('put')
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="name_tr">Başlık <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="name_tr">Title <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="text" id="name_tr" name="name_tr" value="{{$property->name_tr}}" required>
 
                             @error('name_tr')
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="name">Başlık - ingilizce <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="name">Title - english<span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="text" id="name" name="name" value="{{$property->name}}" required>
 
                             @error('name')
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="civanoglu-label" for="featured_image">Özellikli resim <span class="required-text">*</span></label>
+                        <label class="civanoglu-label" for="featured_image">Featured image<span class="required-text">*</span></label>
                         <input class="civanoglu-input" type="file" id="featured_image" name="featured_image">
 
                         <div class="mt-3">
@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="civanoglu-label" for="gallery_images">Galeri resimleri <span class="required-text">*</span></label>
+                        <label class="civanoglu-label" for="gallery_images">Gallery pictures<span class="required-text">*</span></label>
                         <input class="civanoglu-input" type="file" id="gallery_images" name="gallery_images[]" multiple>
 
                         @error('gallery_images')
@@ -80,9 +80,9 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="location_id">Konum <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="location_id">Location <span class="required-text">*</span></label>
                             <select class="civanoglu-input"  name="location_id" id="location_id" required>
-                                <option value="">Konum seçin</option>
+                                <option value="">Choose location</option>
                                 @foreach($locations as $location)
                                     <option {{$property->location->id == $location->id ? 'selected="selected"' : ''}} value="{{$location->id}}">{{$location->name}}</option>
                                 @endforeach
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="price">Fiyat <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="price">Price <span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="number" id="price" name="price" value="{{$property->price}}" required>
 
                             @error('price')
@@ -106,8 +106,8 @@
                             <label class="civanoglu-label" for="sale">İçin <span class="required-text">*</span></label>
                             <select class="civanoglu-input"  name="sale" id="sale" required>
                                 <option value="">Türü seçin</option>
-                                <option {{$property->sale == '0' ? 'selected="selected"' : ''}} value="0">Kira</option>
-                                <option {{$property->sale == '1' ? 'selected="selected"' : ''}} value="1">Satış</option>
+                                <option {{$property->sale == '0' ? 'selected="selected"' : ''}} value="0">Rent</option>
+                                <option {{$property->sale == '1' ? 'selected="selected"' : ''}} value="1">Sales</option>
                             </select>
 
                             @error('sale')
@@ -118,9 +118,9 @@
                         <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="type">Type <span class="required-text">*</span></label>
                             <select class="civanoglu-input"  name="type" id="type" required>
-                                <option value="">Mülk türünü seçin</option>
-                                <option {{$property->type == '0' ? 'selected="selected"' : ''}} value="0">Arazi</option>
-                                <option {{$property->type == '1' ? 'selected="selected"' : ''}} value="1">Daire</option>
+                                <option value="">Choose property type</option>
+                                <option {{$property->type == '0' ? 'selected="selected"' : ''}} value="0">Land</option>
+                                <option {{$property->type == '1' ? 'selected="selected"' : ''}} value="1">Apartment</option>
                                 <option {{$property->type == '2' ? 'selected="selected"' : ''}} value="2">Villa</option>
                             </select>
 
@@ -132,9 +132,9 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="drawing_rooms">çizim odaları</label>
+                            <label class="civanoglu-label" for="drawing_rooms">Drawing rooms</label>
                             <select class="civanoglu-input"  name="drawing_rooms" id="drawing_rooms">
-                                <option value="">Birini seç</option>
+                                <option value="">Choose one</option>
 
                                 @for($x = 0; $x <= 3; $x++)
                                     <option {{$property->drawing_rooms == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
@@ -147,9 +147,9 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="bedrooms">yatak odaları</label>
+                            <label class="civanoglu-label" for="bedrooms">Bedrooms</label>
                             <select class="civanoglu-input"  name="bedrooms" id="bedrooms">
-                                <option value="">Birini seç</option>
+                                <option value="">Choose one</option>
                                 @for($x = 0; $x <= 3; $x++)
                                     <option {{$property->bedrooms == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
                                 @endfor
@@ -161,9 +161,9 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="bathrooms">banyolar</label>
+                            <label class="civanoglu-label" for="bathrooms">Bathrooms</label>
                             <select class="civanoglu-input"  name="bathrooms" id="bathrooms">
-                                <option value="">Birini seç</option>
+                                <option value="">Choose one</option>
                                 @for($x = 0; $x <= 5; $x++)
                                     <option {{$property->bathrooms == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
                                 @endfor
@@ -175,9 +175,9 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="kitchens">Mutfaklar</label>
+                            <label class="civanoglu-label" for="kitchens">Kitchens</label>
                             <select class="civanoglu-input"  name="kitchens" id="kitchens">
-                                <option value="">Birini seç</option>
+                                <option value="">Choose one</option>
                                 @for($x = 0; $x <= 6; $x++)
                                     <option {{$property->kitchens == $x ? 'selected="selected"' : ''}} value="{{$x}}">{{$x}}</option>
                                 @endfor
@@ -189,7 +189,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="net_sqm">Net metrekare <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="net_sqm">Net square meter<span class="required-text">*</span></label>
                             <input class="civanoglu-input" type="number" id="net_sqm" name="net_sqm" value="{{$property->net_sqm}}" required>
 
                             @error('net_sqm')
@@ -198,7 +198,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="gross_sqm">brüt metrekare</label>
+                            <label class="civanoglu-label" for="gross_sqm">gross square meter</label>
                             <input class="civanoglu-input" type="number" id="gross_sqm" name="gross_sqm" value="{{$property->gross_sqm}}">
 
                             @error('gross_sqm')
@@ -210,10 +210,10 @@
                             <label class="civanoglu-label" for="pool">Havuz</label>
                             <select class="civanoglu-input"  name="pool" id="pool">
                                 <option value="">Havuz seçin</option>
-                                <option {{$property->pool == '0' ? 'selected="selected"' : ''}} value="0">Hayır</option>
-                                <option {{$property->pool == '1' ? 'selected="selected"' : ''}} value="1">Özel</option>
-                                <option {{$property->pool == '2' ? 'selected="selected"' : ''}} value="2">Halk</option>
-                                <option {{$property->pool == '3' ? 'selected="selected"' : ''}} value="3">Her ikisi de</option>
+                                <option {{$property->pool == '0' ? 'selected="selected"' : ''}} value="0">No</option>
+                                <option {{$property->pool == '1' ? 'selected="selected"' : ''}} value="1">Special</option>
+                                <option {{$property->pool == '2' ? 'selected="selected"' : ''}} value="2">People</option>
+                                <option {{$property->pool == '3' ? 'selected="selected"' : ''}} value="3">Both of them</option>
                             </select>
 
                             @error('pool')
@@ -224,7 +224,7 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="overview_tr">genel bakış <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="overview_tr">Overview<span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="overview_tr" id="overview_tr" cols="30" rows="3" required>{{$property->overview_tr}}</textarea>
 
                             @error('overview_tr')
@@ -233,7 +233,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="overview">genel bakış - ingilizce <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="overview">Overview - english<span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="overview" id="overview" cols="30" rows="3" required>{{$property->overview}}</textarea>
 
                             @error('overview')
@@ -246,7 +246,7 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="why_buy_tr">neden satın al <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="why_buy_tr">why buy<span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="why_buy_tr" id="why_buy_tr" cols="30" rows="5" required>{{$property->why_buy_tr}}</textarea>
 
                             @error('why_buy_tr')
@@ -255,7 +255,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="why_buy">neden satın al - ingilizce <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="why_buy">why buy - english<span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="why_buy" id="why_buy" cols="30" rows="5" required>{{$property->why_buy}}</textarea>
 
                             @error('why_buy')
@@ -268,7 +268,7 @@
 
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="description_tr">Açıklama <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="description_tr">Explanation <span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="description_tr" id="description_tr" cols="30" rows="10" required>{{$property->description_tr}}</textarea>
 
                             @error('description_tr')
@@ -277,7 +277,7 @@
                         </div>
 
                         <div class="flex-1 px-4">
-                            <label class="civanoglu-label" for="description">Açıklama - ingilizce <span class="required-text">*</span></label>
+                            <label class="civanoglu-label" for="description">Description - english<span class="required-text">*</span></label>
                             <textarea class="civanoglu-input" name="description" id="description" cols="30" rows="10" required>{{$property->description}}</textarea>
 
                             @error('description')
@@ -288,7 +288,7 @@
 
                     </div>
 
-                    <button class="btn" type="submit">Mülkü Kaydet</button>
+                    <button class="btn" type="submit"><i class="" data-feather="upload-cloud"></i> Update</button>
                 </form>
             </div>
         </div>

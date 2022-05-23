@@ -119,6 +119,9 @@ npm i lity |=>
 
 
 php artisan make:controller Admin/PageController --resource |=>  --resource = -r
+php artisan make:controller Admin/PropertyController --resource |=>  --resource = -r
+php artisan make:controller Admin/LocationController --resource |=>  --resource = -r
+php artisan make:controller Admin/UserController --resource |=>  --resource = -r
 
 
 

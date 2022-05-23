@@ -14,17 +14,17 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard-index')" :active="request()->routeIs('dashboard-index')">{{ __('Dashboard') }}</x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard-property.index')" :active="request()->routeIs('dashboard-property.index')">Özellikler</x-nav-link> --}}
+                    <x-nav-link :href="route('dashboard-property.index')" :active="request()->routeIs('dashboard-property.index')">Property</x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard-location.index')" :active="request()->routeIs('dashboard-location.index')">Konumlar</x-nav-link> --}}
+                    <x-nav-link :href="route('dashboard-location.index')" :active="request()->routeIs('dashboard-location.index')">Location <i class="" data-feather="map-pin"></i></x-nav-link>
 
                     <x-nav-link :href="route('dashboard-page.index')" :active="request()->routeIs('dashboard-page.index')">{{ __('Pages') }}</x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard-user.index')" :active="request()->routeIs('dashboard-user.index')">Kullanıcılar</x-nav-link> --}}
+                    <x-nav-link :href="route('dashboard-user.index')" :active="request()->routeIs('dashboard-user.index')">Users <i class="" data-feather="users"></i></x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard-messages')" :active="request()->routeIs('dashboard-messages')">Mesajlar</x-nav-link> --}}
+                    <x-nav-link :href="route('dashboard-messages')" :active="request()->routeIs('dashboard-messages')">Messages <i data-feather="message-square"></i></x-nav-link>
 
-                    <x-nav-link :href="route('dashboard-properties')" :active="request()->routeIs('dashboard-properties')">{{ __('Properties') }}</x-nav-link>
+                    {{-- <x-nav-link :href="route('dashboard-properties')" :active="request()->routeIs('dashboard-properties')">{{ __('Properties') }}</x-nav-link> --}}
 
                     <div class="min-w-max items-center flex">
                         <a class="px-6 py-2 rounded text-white bg-green-500 mr-2" href="{{route('home')}}" target="_blank">FrontEnd Home</a>

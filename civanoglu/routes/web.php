@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -53,20 +56,20 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard-index');
     Route::get('/dashboard/property', [DashboardController::class, 'properties'])->name('dashboard-properties');
     Route::get('/dashboard/add-property', [DashboardController::class, 'addProperty'])->name('add-property');
-    // Route::post('/dashboard/delete-media/{media_id}', [DashboardController::class, 'deleteMedia'])->name('delete-media');
+    Route::post('/dashboard/delete-media/{media_id}', [DashboardController::class, 'deleteMedia'])->name('delete-media');
 
 
 
 
-    // Route::resource('dashboard-property', PropertyController::class);
-    // Route::resource('dashboard-location', LocationController::class);
+    Route::resource('dashboard-property', AdminPropertyController::class);
+    Route::resource('dashboard-location', LocationController::class);
     Route::resource('dashboard-page', PageController::class);
-    // Route::resource('dashboard-user', UserController::class);
-    // Route::resource('dashboard-post', UserController::class);
+    Route::resource('dashboard-user', UserController::class);
+    Route::resource('dashboard-post', UserController::class);
 
-    // Route::get('/dashboard/messages', [DashboardController::class, 'messages'])->name('dashboard-messages');
+    Route::get('/dashboard/messages', [DashboardController::class, 'messages'])->name('dashboard-messages');
     // Route::get('/dashboard/message/{id}', [DashboardController::class, 'singleMessage'])->name('message');
-    // Route::delete('/dashboard/delete-message/{id}', [DashboardController::class, 'deleteMessage'])->name('delete-message');
+    Route::delete('/dashboard/delete-message/{id}', [DashboardController::class, 'deleteMessage'])->name('delete-message');
 });
 
 require __DIR__.'/auth.php';

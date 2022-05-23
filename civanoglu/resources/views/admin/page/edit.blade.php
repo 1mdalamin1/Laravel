@@ -2,11 +2,11 @@
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Sayfayı düzenle
+                Edit || Update Page
             </h2>
 
             <div class="min-w-max">
-                <a href="{{route('dashboard-page.index')}}" class="fullwidth-btn">Geri</a>
+                <a href="{{route('dashboard-page.index')}}" class="fullwidth-btn"><i class="" data-feather="arrow-left"></i> Back</a>
             </div>
         </div>
     </x-slot>

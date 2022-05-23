@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Mesajlar
+            Messages <i class="" data-feather="message-circle"></i>
         </h2>
     </x-slot>
 
@@ -12,10 +12,10 @@
                     <table class="w-full table-auto mb-6">
                         <thead>
                         <tr>
-                            <th class="border px-4 py-2">İsim</th>
-                            <th class="border px-4 py-2">E-posta</th>
-                            <th class="border px-4 py-2">Telefon</th>
-                            <th style="width: 250px" class="border px-4 py-2">Hareketler</th>
+                            <th class="border px-4 py-2">Name</th>
+                            <th class="border px-4 py-2">Email</th>
+                            <th class="border px-4 py-2">Phone</th>
+                            <th style="width: 250px" class="border px-4 py-2">Action</th>
                         </tr>
                         </thead>
                         <tbody>
