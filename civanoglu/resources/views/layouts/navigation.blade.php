@@ -32,10 +32,10 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <a  class="px-6 py-3 cursor-pointer rounded text-white bg-red-500"  :href="route('logout')"
+                            <a  class="px-6 pt-2 pb-3 cursor-pointer rounded text-white bg-red-500"  :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{-- {{ __('Log Out') }} --}} <i class="" data-feather="log-out"></i>
                             </a>
                         </form>
                     </div>
