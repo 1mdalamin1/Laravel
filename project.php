@@ -11,8 +11,7 @@ php artisan serve && npm run watch|| npm run dev |=> run commend
 |||||| This may be last project only laravel :)
 |
 
-|--------Laravel private course - property listing - Part #19 ------#30----#33--
-00:12s/19:14s => https://www.youtube.com/watch?v=ZdILi1H6uvw&list=PLhPBqF--77ImGEZE6xSS62UVegQOIgP4g&index=20
+|--------Laravel private course - property listing ----------
 
 | Project Planning | Database design  | => https://drawsql.app/home
 
