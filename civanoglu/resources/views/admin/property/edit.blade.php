@@ -33,7 +33,7 @@
                 </div>
 
 
-                <form action="{{route('dashboard-property.update', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200"> @csrf @method('put')
+                <form action="{{route('dashboard-property.update', $property->id)}}" method="post" class="p-6 bg-white border-b border-gray-200" enctype="multipart/form-data" > @csrf @method('put')
                     <div class="flex -mx-4 mb-6">
                         <div class="flex-1 px-4">
                             <label class="civanoglu-label" for="name_tr">Title <span class="required-text">*</span></label>
