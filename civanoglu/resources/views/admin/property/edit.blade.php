@@ -21,7 +21,9 @@
                         @foreach($property->gallery as $gallery)
                             <div style="min-width: 100px" class="mr-4 relative mb-4 border border-gray-100">
                                 <div class="flex items-center justify-center h-full">
-                                    <img style="max-width: 100px;" src="/uploads/{{$gallery->name}}" alt="">
+                                    {{-- <img style="max-width: 100px;" src="/uploads/{{$gallery->name}}" alt=""> --}}
+                                    <img style="max-width: 100%; height: 70px; width: 100px;" src="{{ asset('uploads/' . $gallery->name) }}" alt="">
+                                    {{-- <img style="max-width: 100px;" src="/uploads/{{ $gallery->name }}" alt=""> --}}
                                 </div>
 
                                 <form method="post" action="{{route('delete-media', $gallery->id)}}" onsubmit="return confirm('Resmi gerçekten silmek istiyor musunuz?');" class="absolute right-0 top-0"> @csrf
@@ -61,7 +63,7 @@
                         <input class="civanoglu-input" type="file" id="featured_image" name="featured_image">
 
                         <div class="mt-3">
-                            <img src="/uploads/{{$property->featured_image}}" alt="">
+                            <img style="max-width: 100%; height: 70px; width: 100px;" src="/uploads/{{$property->featured_image}}" alt="">
                         </div>
 
                         @error('featured_image')
