@@ -30,29 +30,19 @@
                 <div id="slider" class="">
                     <div class="gallery-slider mb-4">
                         @foreach($property->gallery as $gallery)
-                        <div style="background-image: url({{$gallery->name}})" class="single-gallery-item bg-cover bg-center"></div>
+                        <div style="background-image: url({{'/storage/uploads/'. $gallery->name}})" class="single-gallery-item bg-cover bg-center"></div>
                         @endforeach
                     </div>
 
                     <div class="thumbnail-slider flex">
                         @foreach($property->gallery as $gallery)
                         <div class="single-thumbnail-item w-24">
-                            <div style="background-image: url({{$gallery->name}})" class="bg-cover bg-center h-full w-full"></div>
+                            <div style="background-image: url({{'/storage/uploads/'.$gallery->name}})" class="bg-cover bg-center h-full w-full"></div>
                         </div>
                         @endforeach
                     </div>
                 </div>
-                {{-- Images --}}
-                <div class="md:flex justify-between items-center bg-white p-4 md:p-8 mt-10 shadow-sm">
-                    <h4 class="text-lg md:w-2/12 mb-3 md:mb-0">Tanvir Try to show images</h4>
-                    <div class="md:border-l-2 md:border-gray-300 md:pl-5 md:ml-5 md:w-10/12 text-base">
-                        @foreach($property->gallery as $gallerys)
-                        {{-- <img  style="max-width: 100%; height: 70px; width: 100px;" src="{{ url('/uploads/'.$gallery->name) }}" alt=""> --}}
-                        <br>
-                        <img  style="max-width: 100%; height: 70px; width: 100px;" src="{{ asset('uploads/' . $gallerys->name) }}" alt="">
-                        @endforeach
-                    </div>
-                </div>
+
                 {{-- Overview --}}
                 <div class="md:flex justify-between items-center bg-white p-4 md:p-8 mt-10 shadow-sm">
                     <h4 class="text-lg md:w-2/12 mb-3 md:mb-0">Overview</h4>

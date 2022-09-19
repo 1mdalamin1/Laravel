@@ -278,5 +278,15 @@ https://www.freepik.com/premium-psd/professional-resume-template_3036231.htm#que
 
 /wp-content/uploads/2022/05/facebook.png
 
+<img src="{{ asset(.'/images/'.$article->image) }}" alt="" title="">
+
+php artisan storage:link |=> https://www.itsolutionstuff.com/post/how-to-display-image-from-storage-folder-in-laravelexample.html
+
+
+
+https://laravel.com/docs/8.x/eloquent-resources
+
+
+
 
     */

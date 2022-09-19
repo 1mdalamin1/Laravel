@@ -39,6 +39,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/properties/', [HomeController::class, 'propertyIndex'])->name('properties');
     Route::get('/page/{slug}', [HomeController::class, 'singlePage'])->name('page');
+
+    Route::get('image/{filename}', [HomeController::class, 'displayImage'])->name('image.displayImage');
+
+
     Route::post('/property-inquiry/{id}', [ContactController::class, 'propertyInquiry'])->name('property-inquiry');
 
     // Route::get('/currency/{code}', [HomeController::class, 'currencyChange'])->name('currency-change');

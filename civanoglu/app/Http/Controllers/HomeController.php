@@ -7,6 +7,7 @@ use App\Models\Location;
 use App\Models\Page;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -123,5 +124,41 @@ class HomeController extends Controller
         ]);
         // return view('admin.property.index', ['properties' => $properties]);
     }
+
+// Display Image in all
+
+//     public function displayImage($filename)
+
+// {
+
+
+
+//     $path = storage_public('uploads/' . $filename);
+
+
+
+//     if (!File::exists($path)) {
+
+//         abort(404);
+
+//     }
+
+
+
+//     $file = File::get($path);
+
+//     $type = File::mimeType($path);
+
+
+
+//     $response = Response::make($file, 200);
+
+//     $response->header("Content-Type", $type);
+
+
+
+//     return $response;
+
+// }
 
 }
