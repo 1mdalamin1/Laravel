@@ -21,9 +21,7 @@
                         @foreach($property->gallery as $gallery)
                             <div style="min-width: 100px" class="mr-4 relative mb-4 border border-gray-100">
                                 <div class="flex items-center justify-center h-full">
-                                    {{-- <img style="max-width: 100px;" src="/uploads/{{$gallery->name}}" alt=""> --}}
                                     <img style="max-width: 100%; height: 70px; width: 100px;" src="{{ asset('/storage/uploads/' . $gallery->name) }}" alt="">
-                                    {{-- <img style="max-width: 100px;" src="/uploads/{{ $gallery->name }}" alt=""> --}}
                                 </div>
 
                                 <form method="post" action="{{route('delete-media', $gallery->id)}}" onsubmit="return confirm('Resmi gerçekten silmek istiyor musunuz?');" class="absolute right-0 top-0"> @csrf
@@ -54,8 +52,6 @@
                             <p class="text-red-500 mt-2 text-sm">{{$message}}</p>
                             @enderror
                         </div>
-
-
                     </div>
 
                     <div class="mb-6">
