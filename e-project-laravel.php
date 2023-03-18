@@ -47,7 +47,7 @@ php artisan migrate:fresh --seed
 
 
 
-
+Add Laravel 10 crud
 
 
 */
